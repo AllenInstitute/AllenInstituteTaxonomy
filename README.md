@@ -26,7 +26,7 @@ The `obsm` component contains all dimensionality reductions of the taxonomy (cel
 
 #### obs
 
-The `obs` component contains cell level metadata including cell type annotation, brain region and species. Standardized nomenclature for cell metadata to be decided.
+The `obs` component contains cell level metadata including cell type annotation, brain region, species and additional taxonomy specific fields. Standardized nomenclature for cell metadata to be decided.
 
 * `cluster`
 * `brain_region`
