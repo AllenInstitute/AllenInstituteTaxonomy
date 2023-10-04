@@ -1,3 +1,12 @@
+## THIS VERSION OF THE SCHEMA IS NOW ARCHIVED!  PLEASE MAKE ANY UPDATES TO THE PUBLIC VERSION LOCATION IN SCRATTCH.TAXONOMY 
+
+[**--------THIS IS THE VERSION YOU SHOULD USE HERE---------**](https://github.com/AllenInstitute/scrattch.taxonomy/tree/main/schema)<p>
+[**https://github.com/AllenInstitute/scrattch.taxonomy**](https://github.com/AllenInstitute/scrattch.taxonomy)
+
+# Everything below this point is archived.
+
+<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>.<p>
+
 # Allen Institute Taxonomy anndata
 
 To distribute Allen Institute Taxonomies (AIT) we define an [`anndata`](https://anndata.readthedocs.io/en/latest/index.html) .h5ad file which encapsulates the essential components of a taxonomy required for downstream analysis such as [cell type mapping](https://github.com/AllenInstitute/scrattch-mapping/tree/main). A detailed schema can be found [here](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/AllenInstituteTaxonomySchema.csv).
