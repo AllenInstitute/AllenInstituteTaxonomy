@@ -96,10 +96,20 @@ Patch-Seq records a tri-modality view of the cell includuing transcriptomics, mo
 
 <br>
 
-| Key | expert_description--patchseq |
+| Key | expert_morphology_description |
 | :---  | :--- |
 | Value | Expert description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
 | Type | String. `Free text` |
+
+<br>
+
+| Key | expert_electrophsiology_description |
+| :---  | :--- |
+| Value | Expert description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
+| Type | String. `Free text` |
+
+#### Comments: ROI from pinning of neurons, mapping to clusters with spatial resolution (in particular locations).
+
 
 ## Example: Cell type card stitching. 
 
