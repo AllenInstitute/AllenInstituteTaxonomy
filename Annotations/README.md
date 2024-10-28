@@ -44,6 +44,13 @@ Here we describe the schema for a single piece of literature evidence. It's expe
 | Value | Description of the evidence or phenotype being presented in *reference*. for the associated *cellannotation_setname*. |
 | Type | Categorical with `str` categories. `Controlled`: Predefined set of evidence categories. |
 
+| Key | expert_description--literature |
+| :---  | :--- |
+| Value | Description of relevant information from the literature source. |
+| Type | String. `Free text` |
+
+<br>
+
 ## Spatial
 
 Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tissue along with gene expression from a limited panel of genes.
@@ -66,7 +73,7 @@ Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tiss
 | Key | spatial_roi |
 | :---  | :--- |
 | Annotator | Curator |
-| Value | Expert description for the enriched region occupied by the cell set based on visual inspection of spatial transcriptomics. |
+| Value | Description for the enriched region occupied by the cell set based on visual inspection of spatial transcriptomics. |
 | Type | Categorical with `str` categories. `Controlled`: Pre-defined set of region names from anatomical atlas. |
 
 
@@ -82,7 +89,7 @@ Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tiss
 
 | Key | expert_description--spatial |
 | :---  | :--- |
-| Value | Expert description of the cell set in terms of the cellular phenotypes captured by spatial profiling. |
+| Value | Description of the cell set in terms of the cellular phenotypes captured by spatial profiling. |
 | Type | String. `Free text` |
 
 ## Patch-Seq
@@ -98,14 +105,14 @@ Patch-Seq records a tri-modality view of the cell includuing transcriptomics, mo
 
 | Key | expert_morphology_description |
 | :---  | :--- |
-| Value | Expert description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
+| Value | Description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
 | Type | String. `Free text` |
 
 <br>
 
 | Key | expert_electrophsiology_description |
 | :---  | :--- |
-| Value | Expert description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
+| Value | Description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
 | Type | String. `Free text` |
 
 <br>
