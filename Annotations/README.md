@@ -2,7 +2,7 @@
 
 This schema supports the encoding of cell set evidence from multiple modality types include spatial transcriptomics, patch-seq, viral genetic tools as well as literature.
 
-# Storage of evidence for cell set annotations
+# Recording evidence for cell set annotations
 
 Building evdience from multiple modalities for individual cell sets requires some harmonization of metadata and features that describes a particular cellular phenotype. Harmonizing evidence across cell sets and studies will enable the construction of cell type cards and a comprehensive knowledge base.
 
