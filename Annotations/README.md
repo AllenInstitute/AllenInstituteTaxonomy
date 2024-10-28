@@ -108,13 +108,10 @@ Patch-Seq records a tri-modality view of the cell includuing transcriptomics, mo
 | Value | Expert description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
 | Type | String. `Free text` |
 
-#### Comments: ROI from pinning of neurons, mapping to clusters with spatial resolution (in particular locations).
+<br>
 
-
-## Example: Cell type card stitching. 
-
-STR FS PTHLH ST18 GABA corresponds to PVALB+, PTHLH+ (ref), { synonym } (ref).   
-
-Supporting evidence:
-Location:  …  This is supported by its location in the striatum (references) and merfish data, its morphology {some description} (reference) 
-and patch-seq data and that it is fast spiking (references) - summary of e-phys data supporting fast spiking.
+| Key | pinned_roi |
+| :---  | :--- |
+| Annotator | Automatic |
+| Value | Description of ROI for which each neuron was pinned. |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined set of region names from anatomical atlas. |
