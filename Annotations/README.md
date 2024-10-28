@@ -1,30 +1,61 @@
-## Annotation Schema
+# Annotation Schema
+
+This schema supports the encoding of cell set evidence from multiple modality types include spatial transcriptomics, patch-seq, viral genetic tools as well as literature.
+
+# Storage of evidence for cell set annotations
+
+Building evdience from multiple modalities for individual cell sets requires some harmonization of metadata and features that describes a particular cellular phenotype. Harmonizing evidence across cell sets and studies will enable the construction of cell type cards and a comprehensive knowledge base.
+
+This document describes the AIT Annotation schema, a type of contract, that all datasets can adhere to for enabling various products and tooling around taxonomies.
+
+# Schema:
+
+## scRNA-seq
+
+Controlled schema for scRNA-seq description of cell sets (clustering, and higher) is already covered by [Cell Annotation Schema](https://github.com/cellannotation/cell-annotation-schema) which is best communicated by the [Cell Annotation Platform](https://docs.google.com/document/d/1CqL_t2CMcZF257rvjObDR_2WejsQ019rgUoX0YPJggM/edit?tab=t.0#bookmark=id.90zuscqjyay).
+
+## Literature
+
+Here we describe the schema for a single piece of literature evidence. It's expected that multiple literature references will be recorded for each cell set.
+
+| Key | cellannotation_setname--literature |
+| :---  | :--- |
+| Value | A pre-defined cell set from the taxonomy |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined cell set annotations including clustering and higher level groupings from a taxonomy. |
+
+<br>
+
+| Key | reference |
+| :---  | :--- |
+| Value | DOI link to associated paper |
+| Type | String. `Free text` |
+
+<br>
+
+| Key | synonym |
+| :---  | :--- |
+| Value | Nomenclature used to describe the associated cell set in *reference* |
+| Type | String. `Free text` |
+
+<br>
+
+| Key | evidence_type |
+| :---  | :--- |
+| Value | Description of the evidence or phenotype being presented in *reference*. for the associated *cellannotation_setname*. |
+| Type | Categorical with `str` categories. `Controlled`: evidence_types.csv |
 
 
-
-## Storage of evidence for cell set annotations
-
-
-
-Schema:
-
-snRNA-seq (covered by current CAS)
-Literature:
-Reference (free)
-Cell type name (controlled)
-synonyms (free?)
-Associated evidence type (controlled)
-Spatial
+## Patch-Seq
 Morphology
 Electrophysiology
 Marker genes
 How was the link made between t-type and literature source (free)
-Spatial
+Expert description (free)
+
+## Spatial
 MERSCOPE ROI (controlled)
 CCF ROI (controlled) ← why is this separate (post registration?)
 Dissected ROI (controlled)
-Expert description (free)
-Patchseq
 Expert description (free)
 
 Outcomes:
@@ -33,7 +64,7 @@ Form for controlled/semi-controlled info (as above)
 Template for evidence summary
 Literature type summary  
 
-Example stitching of modality evidence into card:
+## Example stitching of modality evidence into a cell type cardcard:
 
 STR FS PTHLH ST18 GABA corresponds to PVALB+, PTHLH+ (ref), { synonym } (ref).   
 
