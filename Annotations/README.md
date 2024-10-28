@@ -42,29 +42,66 @@ Here we describe the schema for a single piece of literature evidence. It's expe
 | Key | evidence_type |
 | :---  | :--- |
 | Value | Description of the evidence or phenotype being presented in *reference*. for the associated *cellannotation_setname*. |
-| Type | Categorical with `str` categories. `Controlled`: evidence_types.csv |
-
-
-## Patch-Seq
-Morphology
-Electrophysiology
-Marker genes
-How was the link made between t-type and literature source (free)
-Expert description (free)
+| Type | Categorical with `str` categories. `Controlled`: Predefined set of evidence categories. |
 
 ## Spatial
-MERSCOPE ROI (controlled)
-CCF ROI (controlled) ← why is this separate (post registration?)
-Dissected ROI (controlled)
-Expert description (free)
 
-Outcomes:
+Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tissue. 
 
-Form for controlled/semi-controlled info (as above)
-Template for evidence summary
-Literature type summary  
+| Key | cellannotation_setname--spatial |
+| :---  | :--- |
+| Value | A pre-defined cell set from the taxonomy |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined cell set annotations including clustering and higher level groupings from a taxonomy. |
 
-## Example stitching of modality evidence into a cell type cardcard:
+<br>
+
+| Key | dissected_roi |
+| :---  | :--- |
+| Annotator | Automatic |
+| Value | Computed frequence for region of interest as determined from targted region during dissection. |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined set of region names from anatomical atlas. |
+
+<br>
+
+| Key | merscope_roi |
+| :---  | :--- |
+| Annotator | Curator |
+| Value | Expert description for the enriched region occupied by the cell set based on visual inspection of spatial transcriptomics. |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined set of region names from anatomical atlas. |
+
+
+<br>
+
+| Key | common_coordinate_framework_roi |
+| :---  | :--- |
+| Annotator | Automatic |
+| Value | Computed frequence for region of interest as determined from spatial transcriptomics data which has been aligned to a common coordinate framework. |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined set of region names from anatomical atlas. |
+
+<br>
+
+| Key | expert_description--spatial |
+| :---  | :--- |
+| Value | Expert description of the cell set in terms of the cellular phenotypes captured by spatial profiling. |
+| Type | String. `Free text` |
+
+## Patch-Seq
+
+Patch-Seq records a tri-modality view of the cell includuing transcriptomics, morphology and elecrophysiology. 
+
+| Key | cellannotation_setname--patchseq |
+| :---  | :--- |
+| Value | A pre-defined cell set from the taxonomy |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined cell set annotations including clustering and higher level groupings from a taxonomy. |
+
+<br>
+
+| Key | expert_description--patchseq |
+| :---  | :--- |
+| Value | Expert description of the cell set in terms of the cellular phenotypes captured by patch-seq. |
+| Type | String. `Free text` |
+
+## Example: Cell type card stitching. 
 
 STR FS PTHLH ST18 GABA corresponds to PVALB+, PTHLH+ (ref), { synonym } (ref).   
 
