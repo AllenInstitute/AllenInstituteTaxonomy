@@ -132,7 +132,16 @@ Patch-Seq records a tri-modality view of the cell includuing transcriptomics, mo
 
 <br>
 
+| Key | expert_ORCID--general |
+| :---  | :--- |
+| Value | ORCID ID of expert providing general description of cell type. |
+| Type | String. `Free text` |
+
+<br>
+
 | Key | expert_description--general |
 | :---  | :--- |
 | Value | Description of the cell set in terms of a domain experts knowledge. |
 | Type | String. `Free text` |
+
+<br>
