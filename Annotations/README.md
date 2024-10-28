@@ -122,3 +122,17 @@ Patch-Seq records a tri-modality view of the cell includuing transcriptomics, mo
 | Annotator | Automatic |
 | Value | Description of ROI for which each neuron was pinned. |
 | Type | Categorical with `str` categories. `Controlled`: Pre-defined set of region names from anatomical atlas. |
+
+## General
+
+| Key | cellannotation_setname--general |
+| :---  | :--- |
+| Value | A pre-defined cell set from the taxonomy |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined cell set annotations including clustering and higher level groupings from a taxonomy. |
+
+<br>
+
+| Key | expert_description--general |
+| :---  | :--- |
+| Value | Description of the cell set in terms of a domain experts knowledge. |
+| Type | String. `Free text` |
