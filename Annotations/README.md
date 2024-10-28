@@ -63,7 +63,7 @@ Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tiss
 
 <br>
 
-| Key | merscope_roi |
+| Key | spatial_roi |
 | :---  | :--- |
 | Annotator | Curator |
 | Value | Expert description for the enriched region occupied by the cell set based on visual inspection of spatial transcriptomics. |
