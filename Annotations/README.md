@@ -46,7 +46,7 @@ Here we describe the schema for a single piece of literature evidence. It's expe
 
 ## Spatial
 
-Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tissue. 
+Spatial transcriptomics records the x,y,z coordinate of a cell in sectioned tissue along with gene expression from a limited panel of genes.
 
 | Key | cellannotation_setname--spatial |
 | :---  | :--- |
