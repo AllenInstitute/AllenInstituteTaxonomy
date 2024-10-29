@@ -65,7 +65,7 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Value | Identifier for cell set computed from a clustering algorithm. |
 | Type| `str` |
 | Required | MUST |
-| Tags | Calculated metadata |
+| Tags | Annotations |
 
 <br>
 
@@ -76,7 +76,7 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Value | Column name in `obs` is the string [cellannotation_setname] and the values are the strings describing an annotation level of the taxonomy.
 | Type| `Categorical` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Annotations |
 
 <br>
 
@@ -87,7 +87,7 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Value | This MUST be a CL term. If no appropriate high-level term can be found or the cell type is unknown, then it is STRONGLY RECOMMENDED to use "CL:0000003" for native cell.
 | Type| `Categorical` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Annotations |
 
 <br>
 
@@ -271,17 +271,6 @@ The `var` component contains gene level information.
 
 <br>
 
-#### ensembl_id
-| Key | ensembl_id |
-| :-- | :-- |
-| Annotator | Curator |
-| Value | Corresponding Ensembl IDs for each gene symbol in `var.index`. This is required for disambiguation of gene symbols. |
-| Type| `str` |
-| Required | RECOMMENDED |
-| Tags | Assigned metadata |
-
-<br>
-
 #### highly_variable_genes
 | Key | highly_variable_genes |
 | :-- | :-- |
@@ -289,7 +278,7 @@ The `var` component contains gene level information.
 | Value | A logical vector indicating which genes are highly variable. |
 | Type| `bool` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Analysis |
 
 <br>
 
@@ -300,7 +289,7 @@ The `var` component contains gene level information.
 | Value | A logical vector indicating which genes are markers. |
 | Type| `bool` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Analysis |
 
 <br>
 
@@ -315,7 +304,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | This text describes and differentiates the dataset from other datasets in the same collection. It is STRONGLY RECOMMENDED that each dataset title in a collection is unique and does not depend on other metadata such as a different assay to disambiguate it from other datasets in the collection. |
 | Type| `str` |
 | Required | MUST |
-| Tags | Assigned metadata |
+| Tags | Tooling |
 
 <br>
 
@@ -337,7 +326,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Together, these keys define the batches that a normalization or integration algorithm should be aware of. Values MUST refer to cell metadata keys in `obs`. |
 | Type| `list[str]` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Tooling |
 
 <br>
 
@@ -359,7 +348,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Genome annotation version used during alignment. e.g. .gtf or .gff file.  |
 | Type| `str` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Assigned metadata |
 
 <br>
 
@@ -370,7 +359,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | A json formatted dendrogram encoding the taxonomy heirarchy. Either computed or derived from cluster groupings.  |
 | Type| `json` |
 | Required | RECOMMENDED |
-| Tags | Data |
+| Tags | Annotations |
 
 <br>
 
@@ -381,7 +370,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | An ordering of `cluster_id` and higher level groupings from `[cellannotation_setname]`. E.g. ["Class", "Subclass", "cluser_id"]  |
 | Type| `list[str]` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Annotations |
 
 <br>
 
@@ -392,7 +381,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Indicator of which cells to use for a given child taxonomy saved as a list of booleans for each cell. Each entree in this list is named for the relevant "mode" and has TRUE/FALSE calls indicating whether a cell is filtered out. e.g., the "standard" taxonony is all FALSE. |
 | Type| `list[[mode]][bool]` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Tooling |
 
 <br>
 
@@ -403,7 +392,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Indicator of which child of the parent taxonomy to utilize. Mode determines cells to remove based on `filter` as well as switching to relevant analysis components of the `uns` related to child taxonomy specific analysis tooling. |
 | Type| `str` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Tooling |
 
 <br>
 
@@ -414,7 +403,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Marker gene expression in on-target and off-target cell populations, useful for patchseq analysis.  Also includes information about KL divergence calculations and associated QC calls. Defined by buildPatchseqTaxonomy. |
 | Type| `data.frame` |
 | Required | RECOMMENDED |
-| Tags | Data |
+| Tags | Analysis |
 
 <br>
 
@@ -425,7 +414,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | A data.frame of cluster information. |
 | Type| `data.frame` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Annotations |
 
 <br>
 
@@ -436,18 +425,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Marker gene expression in on-target and off-target cell populations, useful for patchseq analysis.  Also includes information about KL divergence calculations and associated QC calls. Defined by buildPatchseqTaxonomy. |
 | Type| `numpy.ndarray` |
 | Required | MUST |
-| Tags | Data |
-
-<br>
-
-#### cluster_use
-| Key | cluster_use |
-| :-- | :-- |
-| Annotator | Computed |
-| Value | A vector of cluster names to use for taxonomy. |
-| Type| `list[str]` |
-| Required | MUST |
-| Tags | Data |
+| Tags | Annotations |
 
 <br>
 
@@ -458,7 +436,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | The value MUST match a key to an embedding in `obsm` for the embedding to display by default. |
 | Type| `str` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Tooling |
 
 <br>
 
@@ -469,7 +447,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | Allen Institute Taxonomy schema version. e.g. "1.0.0" |
 | Type| `str` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Tooling |
 
 <br>
 
@@ -480,7 +458,7 @@ The `uns` component contains more general information and fields with formatting
 | Value | A vector of cluster names to use for taxonomy. |
 | Type| `str` |
 | Required | RECOMMENDED |
-| Tags | Data |
+| Tags | Tooling |
 
 <br>
 
@@ -497,6 +475,6 @@ The `obsm` component contains all dimensionality reductions of the taxonomy (cel
 | Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
 | Type| `numpy.ndarray` |
 | Required | MUST |
-| Tags | Data |
+| Tags | Analysis |
 
 <br>
