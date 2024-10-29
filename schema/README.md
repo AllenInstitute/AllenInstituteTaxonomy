@@ -2,6 +2,8 @@
 
 We have developed a compartmenatlized schema for storing all required aspects of a taxonomy. The fields in the AIT schema are associated to a broad category term (described below) which form a piece of the whole AIT file format. 
 
+*(Note: A pervious version of this standard is available **[as a Google Doc](https://docs.google.com/document/d/1nj6LHUPoo3JnNwZ7PTdniT9pBPsoJr1B/edit?usp=sharing&ouid=113573359044104089630&rtpof=true&sd=true)**).*
+
 ### Schema category terms
 
 Described here are the broad categories that all fields are associated with.
