@@ -264,9 +264,9 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Required | MUST |
 | Tags | Assigned metadata |
 
-<br>
-  
-#### var
+### var
+
+`var` is a [pandas.Dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 
 The `var` component contains gene level information.
 
