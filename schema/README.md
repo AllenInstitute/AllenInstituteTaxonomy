@@ -29,17 +29,17 @@ Within each broad categorical term, fields are ordered by their location in the 
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, RFC2119, and RFC8174 when, and only when, they appear in all capitals, as shown here.
 
-### `X` 
+## `X` 
 
-The `X` : ["Data"] : component contains logCPM normalized expression data (cell x gene) in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.
+* `X` component contains logCPM normalized expression data (cell x gene) in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.
 
-### `raw.X`
+## `raw.X`
 
 The `raw` component contains the unfiltered anndata object containing a count matrix in `raw.X`.
 
-* `X` : ["Data"] : Component contains a count matrix in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.
+* `raw.X` component contains a count matrix in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.
 
-### `obs`
+## `obs`
 
 `obs` is a [pandas.Dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 
@@ -241,7 +241,7 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Required | MUST |
 | Tags | Assigned metadata |
 
-### `var`
+## `var`
 
 `var` is a [pandas.Dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 
@@ -302,7 +302,7 @@ The `var` component contains gene level information.
 
 <br>
 
-#### `uns`
+## `uns`
 
 The `uns` component contains more general information and fields with formatting incompatible with the above components.
 
@@ -484,7 +484,7 @@ The `uns` component contains more general information and fields with formatting
 
 * `cell_annotation_schema`: extended `calculated metadata` about annotations and labelsets stores in `uns` as in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) format under `labelsets`.  
 
-#### `obsm` (Embeddings)
+## `obsm` (Embeddings)
 
 The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
 
