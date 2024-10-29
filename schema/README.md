@@ -18,20 +18,16 @@ Described here are the broad categories that all fields are associated with.
   
 * **[Tooling](https://github.com/AllenInstitute/scrattch.taxonomy/blob/KL_div/schema/aligned_schema.md#tooling)**: Includes fields required for specific tools (e.g., cellxgene, TDT, CAS, CAP, and cell type annotation) that are not strictly part of the taxonomy but are required to inter-operate between various tools.
 
-Here is a graphical representation of these terms in the context of data, metadata, and taxonomies:
-![image](https://github.com/AllenInstitute/scrattch.taxonomy/assets/25486679/eaf6b3d3-0b5f-49fc-9a49-2b7168605964)
+<!-- Here is a graphical representation of these terms in the context of data, metadata, and taxonomies:
+![image](https://github.com/AllenInstitute/scrattch.taxonomy/assets/25486679/eaf6b3d3-0b5f-49fc-9a49-2b7168605964) -->
 
-### Anndata schematic
+## Schema
 
 Within each broad categorical term, fields are ordered by their location in the anndata object: X, raw, obsm, obs, var, uns.
 
 <!-- ![Schematic](https://github.com/AllenInstitute/scrattch.taxonomy/blob/main/schema/AIT_anndata_schema.png) -->
 
-## Proposed integrated schema
-
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, RFC2119, and RFC8174 when, and only when, they appear in all capitals, as shown here.
-
-## Schema
 
 ### X 
 
