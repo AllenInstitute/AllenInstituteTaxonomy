@@ -505,8 +505,7 @@ The `uns` component contains more general information and fields with formatting
 
 <br>
 
-* `cell_annotation_schema` : ["Calculated Metadata"] : extended metadata about annotations and labelsets stores in JSON.
-   * extended metadata about labelsets is stored under the `labelsets' key` in CAS (master documentation in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) under `labelsets`.  
+* `cell_annotation_schema`: extended `calculated metadata` about annotations and labelsets stores in `uns` as in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) format under `labelsets`.  
 
 #### obsm
 
