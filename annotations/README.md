@@ -44,6 +44,8 @@ Here we describe the schema for a single piece of literature evidence. It's expe
 | Value | Description of the evidence or phenotype being presented in *reference*. for the associated *cellannotation_setname*. |
 | Type | Categorical with `str` categories. `Controlled`: Predefined set of evidence categories. |
 
+<br>
+
 | Key | expert_description--literature |
 | :---  | :--- |
 | Value | Description of relevant information from the literature source. |
