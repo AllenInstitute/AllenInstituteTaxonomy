@@ -16,7 +16,7 @@ Controlled schema for scRNA-seq description of cell sets (clustering, and higher
 
 ## Powerpoint
 
-| Key | cellannotation_setname--literature |
+| Key | cellannotation_setname--powerpoint |
 | :---  | :--- |
 | Value | A pre-defined cell set from the taxonomy |
 | Type | Categorical with `str` categories. `Controlled`: Pre-defined cell set annotations including clustering and higher level groupings from a taxonomy. |
