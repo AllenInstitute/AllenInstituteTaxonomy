@@ -14,6 +14,20 @@ This document describes the AIT Annotation schema, a type of contract, that all 
 
 Controlled schema for scRNA-seq description of cell sets (clustering, and higher) is already covered by [Cell Annotation Schema](https://github.com/cellannotation/cell-annotation-schema) which is best communicated by the [Cell Annotation Platform](https://docs.google.com/document/d/1CqL_t2CMcZF257rvjObDR_2WejsQ019rgUoX0YPJggM/edit?tab=t.0#bookmark=id.90zuscqjyay).
 
+## Powerpoint
+
+| Key | cellannotation_setname--literature |
+| :---  | :--- |
+| Value | A pre-defined cell set from the taxonomy |
+| Type | Categorical with `str` categories. `Controlled`: Pre-defined cell set annotations including clustering and higher level groupings from a taxonomy. |
+
+<br>
+
+| Key | powerpoint_url |
+| :---  | :--- |
+| Value | URL to the powerpoint underlying analysis of this annotation. |
+| Type | String. `Free text` |
+
 ## Literature
 
 Here we describe the schema for a single piece of literature evidence. It's expected that multiple literature references will be recorded for each cell set.
