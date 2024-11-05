@@ -8,6 +8,12 @@ Building evdience from multiple modalities for individual cell sets requires som
 
 This document describes the AIT Annotation schema, a type of contract, that all datasets can adhere to for enabling various products and tooling around taxonomies.
 
+# Controlled vocabulary
+
+Anatomical brain regions are defined in the [parcellation_term.csv](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/annotations/controlled_vocab/parcellation_term.csv) which was pulled from [BICAN resource](https://github.com/AllenInstitute/asrs_sandbox/tree/main/output/package_3_20231219).
+
+Cell type annotations are defined in the [annotation_schema_controlled_vocab%20-%20hmba_consensus_annotation_sets.csv](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/annotations/controlled_vocab/annotation_schema_controlled_vocab%20-%20hmba_consensus_annotation_sets.csv) which was pulled from the [consensus annotation google sheet](https://docs.google.com/spreadsheets/d/1NwO-_BQumtfVYcTNP--vRa5434Elvj5me1oEKV1Q-gE/edit?gid=1097046344#gid=1097046344).
+
 # Schema:
 
 ## scRNA-seq
