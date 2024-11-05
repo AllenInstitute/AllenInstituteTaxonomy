@@ -1,0 +1,58 @@
+group,subclass,class,neighborhood
+BN Astrocyte,Astrocyte,Astro-Epen,Nonneuron
+STR Astrocyte,Astrocyte,Astro-Epen,Nonneuron
+Ependymal,Ependymal,Astro-Epen,Nonneuron
+Microglia,Microglia,Immune,Nonneuron
+BAM,Macrophage,Immune,Nonneuron
+T cells,Lymphocyte,Immune,Nonneuron
+NK cells,Lymphocyte,Immune,Nonneuron
+Oligo OPALIN,Oligodendrocyte,OPC-Oligo,Nonneuron
+Oligo RBFOX1,Oligodendrocyte,OPC-Oligo,Nonneuron
+OPC,OPC,OPC-Oligo,Nonneuron
+COP,COP,OPC-Oligo,Nonneuron
+ImOligo,ImOligo,OPC-Oligo,Nonneuron
+Endo,Endo,Vascular,Nonneuron
+Pericyte,Pericyte,Vascular,Nonneuron
+SMC,SMC,Vascular,Nonneuron
+VLMC,VLMC,Vascular,Nonneuron
+SN STH PVALB PITX2 Glut,BG Glut,F M Glut,Glut Sero Dopa
+TH PVALB CLMN Glut,TH Glut,F M Glut,Glut Sero Dopa
+SN STH VTA Glut,BG Glut,F M Glut,Glut Sero Dopa
+BG SKOR1 Glut,BG Glut,F M Glut,Glut Sero Dopa
+SN TH CALB1 Dopa,SN TH Dopa,MB Dopaminergic,Glut Sero Dopa
+SN TH SOX6 Dopa,SN TH Dopa,MB Dopaminergic,Glut Sero Dopa
+SN TH GAD2 Dopa,SN TH Dopa,MB Dopaminergic,Glut Sero Dopa
+SN STH HDC Histaminergic,SN STH Histaminergic,MB-GABA,Subpallium GABA
+BN LAMP5 LHX6 GABA,CN MGE LAMP5 GABA,CN MGE GABA,Subpallium GABA
+BN LAMP5 CXCL14 GABA,CN CGE LAMP5 GABA,CN CGE GABA,Subpallium GABA
+STR VIP GABA,CN CGE VIP GABA,CN CGE GABA,Subpallium GABA
+NDB SI LHX8 GABA,CN LHX6 LHX8 GABA,CN MGE GABA,Subpallium GABA
+STR LHX8 ST18 GABA,CN LHX6 LHX8 GABA,CN MGE GABA,Subpallium GABA
+STR TAC3 PLPP4 GABA,CN LHX6 LHX8 GABA,CN MGE GABA,Subpallium GABA
+GP STRv LHX8 GABA,CN LHX6 LHX8 GABA,CN MGE GABA,Subpallium GABA
+GP SOX6 KCNA1 GABA,CN LHX6 LHX8 GABA,CN MGE GABA,Subpallium GABA
+NDB SI LHX6 LHX8 GBX1,CN LHX6 LHX8 GABA,CN MGE GABA,Subpallium GABA
+GPi Shell,GP GABA Glut,BG GABA Glut,GABA Glut
+GPi Core,GP PVALB GABA,CN MGE GABA,Subpallium GABA
+SN PVALB GATA3 GABA,SN PVALB GABA,CN MGE GABA,Subpallium GABA
+TH MEIS2 OTX2 GABA,TH MEIS2 GABA,CN MGE GABA,Subpallium GABA
+SN STH PAX8 GABA,SN STH GABA,CN MGE GABA,Subpallium GABA
+SN STH GATA3 TCF7L2 GABA,SN STH GABA,CN MGE GABA,Subpallium GABA
+SN STH GABA,SN STH GABA,CN MGE GABA,Subpallium GABA
+STR SST Chodl GABA,STR SST GABA,CN MGE GABA,Subpallium GABA
+STR SST ADARB2 GABA,STR SST GABA,CN MGE GABA,Subpallium GABA
+STR SST RSPO2 GABA,STR SST GABA,CN MGE GABA,Subpallium GABA
+STR Cholinergic GABA,STR Cholinergic GABA,CN MGE GABA,Subpallium GABA
+STR FS PTHLH ST18 GABA,BG PVALB GABA,CN MGE GABA,Subpallium GABA
+GP MEIS2 SOX6 GABA,BN MEIS2 GABA,CN MGE GABA,Subpallium GABA
+BN MEIS2 GABA,BN MEIS2 GABA,CN MGE GABA,Subpallium GABA
+STRd D1 Matrix,STR D1 MSN GABA,CN LGE GABA,Subpallium GABA
+STRv D1 Shell,STR D1 MSN GABA,CN LGE GABA,Subpallium GABA
+STRd D1 Striosome,STR D1 MSN GABA,CN LGE GABA,Subpallium GABA
+STRd D2 Matrix,STR D2 MSN GABA,CN LGE GABA,Subpallium GABA
+STRv D2 Shell,STR D2 MSN GABA,CN LGE GABA,Subpallium GABA
+STRd D2 Striosome,STR D2 MSN GABA,CN LGE GABA,Subpallium GABA
+STRd D2 StrioMat Hybrid,STR D2 MSN GABA,CN LGE GABA,Subpallium GABA
+STRv D1 NUDAP,STR Hybrid MSN GABA,CN LGE GABA,Subpallium GABA
+STRd D1D2 Hybrid,STR Hybrid MSN GABA,CN LGE GABA,Subpallium GABA
+OT D1-ICj,STR Granular GABA,CN LGE GABA,Subpallium GABA
