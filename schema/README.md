@@ -91,6 +91,8 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Required | RECOMMENDED |
 | Tags | Annotations |
 
+Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5` from [Hodge et al. 2019](https://www.nature.com/articles/s41586-019-1506-7)
+
 <br>
 
 #### cell_type_ontology_term_id
