@@ -50,7 +50,7 @@ The `raw` component contains the unfiltered anndata object containing a count ma
 | Annotator | Curator |
 | Value | `raw.X` component contains a count matrix in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.|
 | Type| `Index`, `str` |
-| Required | RECOMMENDEDT |
+| Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 
