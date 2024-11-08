@@ -227,17 +227,6 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 
 <br>
 
-#### development_stage_ontology_term_id
-| Key | development_stage_ontology_term_id |
-| :-- | :-- |
-| Annotator | Curator |
-| Value | If organism_ontolology_term_id is "NCBITaxon:9606" for Homo sapiens, this MUST be the most accurate HsapDv term. Otherwise, for all other organisms this MUST be the most accurate child of UBERON:0000105 for life cycle stage, excluding UBERON:0000071 for death stage.
-| Type| `Categorical` |
-| Required | RECOMMENDED |
-| Tags | Assigned metadata |
-
-<br>
-
 #### suspension_type
 | Key | suspension_type |
 | :-- | :-- |
@@ -279,7 +268,7 @@ The `var` component contains gene level information.
 | Key | ensembl_id |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | If the feature is a gene then this MUST be an human readable SYMBOL term. The index of the pandas.DataFrame MUST contain unique identifiers for features. If present, the index of raw.var MUST be identical to the index of var. |
+| Value | If the feature is a gene then this MUST be a gene ID from ensembl. Each index of the pandas.DataFrame MUST map to a unique emsembl_id identifiers for features. If present, the raw.var.ensembl_id MUST be identical to the var.ensembl_id. |
 | Type| `str` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
@@ -298,10 +287,10 @@ The `var` component contains gene level information.
 <br>
 
 #### marker_genes
-| Key | marker_genes |
+| Key | marker_genes_[set_name] |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | A logical vector indicating which genes are markers. |
+| Value | A logical vector indicating which genes are markers. Multiple marker gene sets can be specified. |
 | Type| `bool` |
 | Required | RECOMMENDED |
 | Tags | Analysis |
