@@ -378,23 +378,23 @@ The `uns` component contains more general information and fields with formatting
 
 <br>
 
-#### filter
-| Key | filter |
-| :-- | :-- |
-| Annotator | Curator/Computed |
-| Value | Indicator of which cells to use for a given child taxonomy saved as a list of booleans for each cell. Each entree in this list is named for the relevant "mode" and has TRUE/FALSE calls indicating whether a cell is filtered out. e.g., the "standard" taxonony is all FALSE. |
-| Type| `list[[mode]][bool]` |
-| Required | MUST |
-| Tags | Tooling |
-
-<br>
-
 #### mode
 | Key | mode |
 | :-- | :-- |
 | Annotator | Curator/Computed |
 | Value | Indicator of which child of the parent taxonomy to utilize. Mode determines cells to remove based on `filter` as well as switching to relevant analysis components of the `uns` related to child taxonomy specific analysis tooling. |
 | Type| `str` |
+| Required | MUST |
+| Tags | Tooling |
+
+<br>
+
+#### filter
+| Key | filter |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | Indicator of which cells to use for a given child taxonomy saved as a list of booleans for each cell. TRUE indicates a cell should be removed and FALSE indicates the cell should not be removed. Each entree in this list is named for the relevant "mode" and has TRUE/FALSE calls indicating whether a cell is filtered out. e.g., the "standard" taxonony is all FALSE. |
+| Type| `list[[mode]][bool]` |
 | Required | MUST |
 | Tags | Tooling |
 
@@ -414,7 +414,7 @@ The `uns` component contains more general information and fields with formatting
 #### cluster_info
 | Key | cluster_info |
 | :-- | :-- |
-| Annotator | Curator |
+| Annotator | Curator/Computed |
 | Value | A data.frame of cluster information. |
 | Type| `data.frame` |
 | Required | MUST |
@@ -436,7 +436,7 @@ The `uns` component contains more general information and fields with formatting
 #### default_embedding
 | Key | default_embedding |
 | :-- | :-- |
-| Annotator | Curator |
+| Annotator | Curator/Computed |
 | Value | The value MUST match a key to an embedding in `obsm` for the embedding to display by default. |
 | Type| `str` |
 | Required | RECOMMENDED |
@@ -456,10 +456,21 @@ The `uns` component contains more general information and fields with formatting
 <br>
 
 #### cellannotation_schema_version
+| Key | cell_annotation_schema |
+| :-- | :-- |
+| Annotator | Computed |
+| Value | A json storing the entire cell annotation schema (CAS) information. |
+| Type| `str` |
+| Required | RECOMMENDED |
+| Tags | Tooling |
+
+<br>
+
+#### cellannotation_schema_version
 | Key | cellannotation_schema_version |
 | :-- | :-- |
 | Annotator | Computed |
-| Value | A vector of cluster names to use for taxonomy. |
+| Value | A version id for the CAS schema. |
 | Type| `str` |
 | Required | RECOMMENDED |
 | Tags | Tooling |
