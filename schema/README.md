@@ -455,12 +455,12 @@ The `uns` component contains more general information and fields with formatting
 
 <br>
 
-#### cellannotation_schema_version
+#### cellannotation_schema
 | Key | cell_annotation_schema |
 | :-- | :-- |
 | Annotator | Computed |
 | Value | A json storing the entire cell annotation schema (CAS) information. |
-| Type| `str` |
+| Type| `json` |
 | Required | RECOMMENDED |
 | Tags | Tooling |
 
