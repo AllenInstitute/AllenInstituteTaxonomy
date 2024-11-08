@@ -154,7 +154,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Key | organism_ontology_term_id |
 | :-- | :-- |
 | Annotator | Computed |
-| Value | NCBITaxon identifier which MUST be a child of NCBITaxon:33208 for Metazoa. |
+| Value | NCBITaxon identifier which MUST be a child of NCBITaxon:33208 for Metazoa. Ontology terms are mapped from `organism` using the [GenneOrthology](https://github.com/AllenInstitute/GeneOrthology) github repo. |
 | Type| `str` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
