@@ -38,7 +38,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 | Annotator | Curator |
 | Value | `X` component contains normalized expression data (cell x gene) in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format. |
 | Type| `Index`, `str` |
-| Required | MUST |
+| Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 ## `raw`
@@ -50,7 +50,7 @@ The `raw` component contains the unfiltered anndata object containing a count ma
 | Annotator | Curator |
 | Value | `raw.X` component contains a count matrix in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.|
 | Type| `Index`, `str` |
-| Required | MUST |
+| Required | RECOMMENDEDT |
 | Tags | Assigned metadata |
 
 
