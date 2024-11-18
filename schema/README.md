@@ -37,9 +37,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 | :-- | :-- |
 | Annotator | Curator |
 | Value | `X` component contains normalized expression data (cell x gene) in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format. |
-| Type| `Index`, `str` |
+| Type| `numeric` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Data |
 
 ## `raw`
 
@@ -49,9 +49,9 @@ The `raw` component contains the unfiltered anndata object containing a count ma
 | :-- | :-- |
 | Annotator | Curator |
 | Value | `raw.X` component contains a count matrix in [scipy.sparse.csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) matrix format.|
-| Type| `Index`, `str` |
+| Type| `int` |
 | Required | RECOMMENDED |
-| Tags | Assigned metadata |
+| Tags | Data |
 
 
 ## `obs`
@@ -351,7 +351,7 @@ The `uns` component contains more general information and fields with formatting
 | Annotator | Curator |
 | Value | Genome annotation version used during alignment. e.g. .gtf or .gff file.  |
 | Type| `str` |
-| Required | MUST |
+| Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 <br>
