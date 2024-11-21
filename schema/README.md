@@ -371,8 +371,8 @@ The `uns` component contains more general information and fields with formatting
 | Key | heirarchy |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | An ordering of `cluster_id` and higher level groupings from `[cellannotation_setname]`. E.g. ["Class", "Subclass", "cluser_id"]  |
-| Type| `list[str]` |
+| Value | An ordering of `cluster_id` and higher level groupings from `[cellannotation_setname]` where smaller numbers are broader types. E.g. {"Class": 0, "Subclass": 1, "cluser_id": 2}  |
+| Type| `dict{str: int}` |
 | Required | MUST |
 | Tags | Annotations |
 
