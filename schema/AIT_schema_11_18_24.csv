@@ -35,7 +35,7 @@ uns,mode,Computed,Indicator of which taxonomy child to utilize.,str,MUST,Tooling
 uns,filter,Computed,List of booleans indicating cells for child taxonomy modes.,list[bool],MUST,Tooling
 uns,qualty_control_markers,Computed,Marker gene expression for patchseq analysis.,data.frame,RECOMMENDED,Analysis
 uns,cluster_info,Computed,Data.frame of cluster information.,data.frame,MUST,Annotations
-uns,cluster_id_median_expr,Curator/Computed,Marker gene expression for taxonomy hierarchy.,numpy.ndarray,MUST,Annotations
+uns,cluster_id_median_expr,Curator/Computed,Marker gene expression for taxonomy hierarchy.,numpy.ndarray,RECOMMENDED,Annotations
 uns,default_embedding,Curator/Computed,Default embedding to display; matches a key in obsm.,str,RECOMMENDED,Tooling
 uns,schema_version,Computed,Allen Institute Taxonomy schema version.,str,MUST,Tooling
 uns,cellannotation_metadata,Curator,Dictionary storing annotation information,dictionary,RECOMMENDED,Tooling
