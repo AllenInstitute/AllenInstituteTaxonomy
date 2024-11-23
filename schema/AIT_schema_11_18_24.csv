@@ -4,7 +4,7 @@ raw,raw.X,Curator,raw.X component contains a count matrix in scipy.sparse.csr_ma
 obs,index,Curator,Unique identifier corresponding to each individual cell.,Index,MUST,Assigned metadata
 obs,cluster_id,Curator,Identifier for cell set computed from a clustering algorithm.,str,MUST,Annotations
 obs,[cellannotation_setname],Curator,Column name in `obs` is the string [cellannotation_setname] and the values describe an annotation level of the taxonomy.,Categorical,RECOMMENDED,Annotations
-obs,cell_type_ontology_term_id,Curator,This MUST be a CL term or 'CL:0000003' for native cell if unknown.,Categorical,RECOMMENDED,Annotations
+obs,cell_type_ontology_term,Curator,This MUST be a CL term or 'CL:0000003' for native cell if unknown.,Categorical,RECOMMENDED,Annotations
 obs,load_id,Curator,Identifier for the sequencing library for which molecular measurements from a specific set of cells is derived.,str,MUST,Assigned metadata
 obs,donor_id,Curator,Identifier for the unique individual; called `donor_label` in BKP.,str,MUST,Assigned metadata
 obs,assay,Curator,Human-readable sequencing modality with a corresponding EFO ontology term.,str,MUST,Assigned metadata
@@ -14,28 +14,29 @@ obs,donor_age,Curator,Currently a free text field for defining the age of the do
 obs,anatomical_region,Curator,Human-readable name for `anatomical_region_ontology_term_id`.,Categorical,MUST,Assigned metadata
 obs,anatomical_region_ontology_term_id,Computed,UBERON terms for `anatomical_region` field.,Categorical,RECOMMENDED,Assigned metadata
 obs,self_reported_sex,Curator,Placeholder for donor reported sex; aligns with BKP `donor_sex`.,Categorical,MUST,Assigned metadata
+obs,self_reported_sex_ontology_term_id,Computed,Placeholder for donor reported sex; aligns with BKP `donor_sex`.,Categorical,RECOMMENDED,Assigned metadata
 obs,self_reported_ethnicity_ontology_term_id,Computed,Child of PATO:0001894 for phenotypic sex or 'unknown' if unavailable.,Categorical,RECOMMENDED,Assigned metadata
 obs,disease_ontology_term_id,Curator,MUST be a MONDO term or 'PATO:0000461' for normal/healthy.,Categorical,RECOMMENDED,Assigned metadata
 obs,suspension_type,Curator,"Either 'cell', 'nucleus', or 'na'.",Categorical,MUST,Assigned metadata
 obs,is_primary_data,Curator,"True for canonical instance of cellular observation, False otherwise.",bool,MUST,Assigned metadata
 var,index,Curator,Human-readable SYMBOL term for gene features.,str,MUST,Assigned metadata
 var,ensembl_id,Curator,Gene ID from ensembl; must map to unique ensembl_id identifiers.,str,RECOMMENDED,Assigned metadata
-var,highly_variable_genes,Curator,Logical vector indicating highly variable genes.,bool,RECOMMENDED,Analysis
-var,marker_genes_[set_name],Curator,Logical vector indicating marker genes for multiple sets.,bool,RECOMMENDED,Analysis
+var,highly_variable_genes[_name],Curator,Logical vector indicating highly variable genes.,bool,RECOMMENDED,Analysis
+var,marker_genes[_name],Curator,Logical vector indicating marker genes for multiple sets.,bool,RECOMMENDED,Analysis
+uns,cluster_[algorithm],Curator,Full description of clustering parameters.,dictionary,RECOMMENDED,Tooling
 uns,title,Curator,Description differentiating dataset from others in the same collection.,str,MUST,Tooling
 uns,dataset_purl,Curator,Link to molecular data if not present in X or raw.X.,str,RECOMMENDED,Data
 uns,batch_condition,Curator,Keys defining batches for normalization/integration algorithms.,list[str],RECOMMENDED,Tooling
 uns,reference_genome,Curator,Reference genome used to align molecular measurements.,str,RECOMMENDED,Assigned metadata
 uns,gene_annotation_version,Curator,Genome annotation version used during alignment.,str,RECOMMENDED,Assigned metadata
-uns,dend,Curator,JSON formatted dendrogram encoding taxonomy hierarchy.,json,RECOMMENDED,Annotations
-uns,heirarchy,Curator,Ordering of cluster_id and higher-level groupings.,list[str],MUST,Annotations
-uns,mode,Curator/Computed,Indicator of which taxonomy child to utilize.,str,MUST,Tooling
-uns,filter,Curator/Computed,List of booleans indicating cells for child taxonomy modes.,list[bool],MUST,Tooling
-uns,qualty_control_markers,Curator,Marker gene expression for patchseq analysis.,data.frame,RECOMMENDED,Analysis
-uns,cluster_info,Curator/Computed,Data.frame of cluster information.,data.frame,MUST,Annotations
+uns,dendrogram,Curator,JSON formatted dendrogram encoding taxonomy hierarchy.,json,RECOMMENDED,Annotations
+uns,heirarchy,Curator,Ordering of cluster_id and higher-level groupings.,dictionary,MUST,Annotations
+uns,mode,Computed,Indicator of which taxonomy child to utilize.,str,MUST,Tooling
+uns,filter,Computed,List of booleans indicating cells for child taxonomy modes.,list[bool],MUST,Tooling
+uns,qualty_control_markers,Computed,Marker gene expression for patchseq analysis.,data.frame,RECOMMENDED,Analysis
+uns,cluster_info,Computed,Data.frame of cluster information.,data.frame,MUST,Annotations
 uns,cluster_id_median_expr,Curator/Computed,Marker gene expression for taxonomy hierarchy.,numpy.ndarray,MUST,Annotations
 uns,default_embedding,Curator/Computed,Default embedding to display; matches a key in obsm.,str,RECOMMENDED,Tooling
-uns,schema_version,Curator,Allen Institute Taxonomy schema version.,str,MUST,Tooling
-uns,cellannotation_schema,Curator,JSON storing cell annotation schema (CAS) information.,json,RECOMMENDED,Tooling
-uns,cellannotation_schema_version,Curator,Version ID for the CAS schema.,str,RECOMMENDED,Tooling
+uns,schema_version,Computed,Allen Institute Taxonomy schema version.,str,MUST,Tooling
+uns,cellannotation_metadata,Curator,Dictionary storing annotation information,dictionary,RECOMMENDED,Tooling
 obsm,X_[embedding],Curator/Computed,N-dimensional embedding (cell x dim) of high-dimensional data.,numpy.ndarray,MUST,Analysis
