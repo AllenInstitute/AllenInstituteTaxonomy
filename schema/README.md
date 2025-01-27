@@ -360,15 +360,15 @@ The `uns` component contains more general information and fields with formatting
 | Key | dend |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | A json formatted dendrogram encoding the taxonomy heirarchy. Either computed or derived from cluster groupings.  |
+| Value | A json formatted dendrogram encoding the taxonomy hierarchy. Either computed or derived from cluster groupings.  |
 | Type| `json` |
 | Required | RECOMMENDED |
 | Tags | Annotations |
 
 <br>
 
-#### heirarchy
-| Key | heirarchy |
+#### hierarchy
+| Key | hierarchy |
 | :-- | :-- |
 | Annotator | Curator |
 | Value | An ordering of `cluster_id` and higher level groupings from `[cellannotation_setname]` where smaller numbers are broader types. E.g. {"Class": 0, "Subclass": 1, "cluser_id": 2}  |
