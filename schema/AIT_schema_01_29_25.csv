@@ -27,7 +27,7 @@ var,index,Curator,Human-readable SYMBOL term for gene features.,Index,MUST,Assig
 var,ensembl_id,Curator,Gene ID from ensembl; must map to unique ensembl_id identifiers.,str,RECOMMENDED,Assigned metadata
 var,highly_variable_genes[_name],Curator,Logical vector indicating highly variable genes.,bool,RECOMMENDED,Analysis
 var,marker_genes[_name],Curator,Logical vector indicating marker genes for multiple sets.,bool,RECOMMENDED,Analysis
-uns,cluster_[algorithm],Curator,Full description of clustering parameters.,dictionary,RECOMMENDED,Tooling
+uns,cluster_algorithm,Curator,Full description of clustering parameters.,dictionary,RECOMMENDED,Tooling
 uns,title,Curator,Description differentiating dataset from others in the same collection.,str,MUST,Tooling
 uns,dataset_purl,Curator,Link to molecular data if not present in X or raw.X.,str,RECOMMENDED,Data
 uns,batch_condition,Curator,Keys defining batches for normalization/integration algorithms.,list[str],RECOMMENDED,Tooling
