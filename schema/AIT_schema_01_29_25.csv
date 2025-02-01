@@ -27,6 +27,7 @@ var,index,Curator,Human-readable SYMBOL term for gene features.,Index,MUST,Assig
 var,ensembl_id,Curator,Gene ID from ensembl; must map to unique ensembl_id identifiers.,str,RECOMMENDED,Assigned metadata
 var,highly_variable_genes[_name],Curator,Logical vector indicating highly variable genes.,bool,RECOMMENDED,Analysis
 var,marker_genes[_name],Curator,Logical vector indicating marker genes for multiple sets.,bool,RECOMMENDED,Analysis
+varm,cluster_id_median_expr,Curator/Computed,Marker gene expression for taxonomy hierarchy.,numpy.ndarray,RECOMMENDED,Annotations
 uns,cluster_algorithm,Curator,Full description of clustering parameters.,dictionary,RECOMMENDED,Tooling
 uns,title,Curator,Description differentiating dataset from others in the same collection.,str,MUST,Tooling
 uns,dataset_purl,Curator,Link to molecular data if not present in X or raw.X.,str,RECOMMENDED,Data
@@ -39,7 +40,6 @@ uns,mode,Computed,Indicator of which taxonomy child to utilize.,str,MUST,Tooling
 uns,filter,Computed,List of booleans indicating cells for child taxonomy modes.,list[bool],MUST,Tooling
 uns,qualty_control_markers,Computed,Marker gene expression for patchseq analysis.,data.frame,RECOMMENDED,Analysis
 uns,cluster_info,Computed,Data.frame of cluster information.,data.frame,MUST,Annotations
-uns,cluster_id_median_expr,Curator/Computed,Marker gene expression for taxonomy hierarchy.,numpy.ndarray,RECOMMENDED,Annotations
 uns,default_embedding,Curator/Computed,Default embedding to display; matches a key in obsm.,str,RECOMMENDED,Tooling
 uns,schema_version,Computed,Allen Institute Taxonomy schema version.,str,MUST,Tooling
 uns,cellannotation_metadata,Curator,Dictionary storing annotation information,dictionary,RECOMMENDED,Tooling
