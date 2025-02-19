@@ -42,5 +42,5 @@ uns,qualty_control_markers,Computed,Marker gene expression for patchseq analysis
 uns,cluster_info,Computed,Data.frame of cluster information.,data.frame,MUST,Annotations
 uns,default_embedding,Curator/Computed,Default embedding to display; matches a key in obsm.,str,RECOMMENDED,Tooling
 uns,schema_version,Computed,Allen Institute Taxonomy schema version.,str,MUST,Tooling
-uns,cellannotation_metadata,Curator,Dictionary storing annotation information,dictionary,RECOMMENDED,Tooling
+uns,cellannotation_schema,Curator,Dictionary storing annotation information,dictionary,RECOMMENDED,Tooling
 obsm,X_[embedding],Curator/Computed,N-dimensional embedding (cell x dim) of high-dimensional data.,numpy.ndarray,MUST,Analysis
