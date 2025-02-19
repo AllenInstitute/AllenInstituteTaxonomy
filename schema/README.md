@@ -139,6 +139,17 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 
 <br>
 
+#### assay_ontology_term_id
+| Key | assay_ontology_term_id |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | Most appropriate EFO ontology term for assay. (e.g.,"10x 3' v2"="EFO:0009899","10x 3' v3"="EFO:0009922","Smart-seq"="EFO:0008930").
+| Type| `str` |
+| Required | MUST |
+| Tags | Assigned metadata |
+
+<br>
+
 #### organism
 | Key | organism |
 | :-- | :-- |
@@ -186,8 +197,19 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 #### anatomical_region_ontology_term_id
 | Key | anatomical_region_ontology_term_id |
 | :-- | :-- |
-| Annotator | Computed |
+| Annotator | Curator/Computed |
 | Value | UBERON terms for the `anatomical_region` field that we have (e.g., 'brain': 'UBERON_0000955'). |
+| Type| `Categorical` |
+| Required | RECOMMENDED |
+| Tags | Assigned metadata |
+
+<br>
+
+#### brain_region_ontology_term_id
+| Key | brain_region_ontology_term_id |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | Brain region IDs from one of the brain-bican atlases for the `anatomical_region` field. Currently includes DHBA, HBA, and MBA, but will expand. |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
@@ -205,11 +227,44 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 
 <br>
 
+#### self_reported_sex_ontology_term_id
+| Key | self_reported_sex_ontology_term_id |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | A child of PATO:0001894 for phenotypic sex or "unknown" if unavailable or if sex corresponds to something not included in PATO. Female = PATO_0000383 and Male = PATO_0000384. |
+| Type| `Categorical` |
+| Required | MUST |
+| Tags | Assigned metadata |
+
+<br>
+
+#### self_reported_ethnicity
+| Key | self_reported_ethnicity |
+| :-- | :-- |
+| Annotator | Curator |
+| Value | This MUST be a child of PATO:0001894 for phenotypic sex or "unknown" if unavailable. |
+| Type| `Categorical` |
+| Required | RECOMMENDED |
+| Tags | Assigned metadata |
+
+<br>
+
 #### self_reported_ethnicity_ontology_term_id
 | Key | self_reported_ethnicity_ontology_term_id |
 | :-- | :-- |
-| Annotator | Computed |
-| Value | This MUST be a child of PATO:0001894 for phenotypic sex or "unknown" if unavailable. |
+| Annotator | Curator/Computed |
+| Value | Either the most relevant HANCESTRO term,"multiethnic" if more than one ethnicity is reported, or "unknown" if unavailable. |
+| Type| `Categorical` |
+| Required | RECOMMENDED |
+| Tags | Assigned metadata |
+
+<br>
+
+#### disease
+| Key | disease |
+| :-- | :-- |
+| Annotator | Curator |
+| Value | A term corresponding to disease state (or "control" for normal/healthy) |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
@@ -219,7 +274,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 #### disease_ontology_term_id
 | Key | disease_ontology_term_id |
 | :-- | :-- |
-| Annotator | Curator |
+| Annotator | Curator/Computed |
 | Value | This MUST be a MONDO term or "PATO:0000461" for normal or healthy. |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
@@ -275,18 +330,18 @@ The `var` component contains gene level information.
 
 <br>
 
-#### highly_variable_genes
+#### highly_variable_genes[_name]
 | Key | highly_variable_genes |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | A logical vector indicating which genes are highly variable. |
+| Value | A logical vector indicating which genes are highly variable. Multiple highly variable gene sets can be specified. |
 | Type| `bool` |
 | Required | RECOMMENDED |
 | Tags | Analysis |
 
 <br>
 
-#### marker_genes
+#### marker_genes[_name]
 | Key | marker_genes_[set_name] |
 | :-- | :-- |
 | Annotator | Curator |
@@ -400,14 +455,14 @@ The `uns` component contains more general information and fields with formatting
 
 <br>
 
-#### qualty_control_markers
-| Key | qualty_control_markers |
+#### cluster_algorithm
+| Key | cluster_algorithm |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | Marker gene expression in on-target and off-target cell populations, useful for patchseq analysis.  Also includes information about KL divergence calculations and associated QC calls. Defined by buildPatchseqTaxonomy. |
+| Value | Full description of clustering parameters as a data.frame. |
 | Type| `data.frame` |
-| Required | RECOMMENDED |
-| Tags | Analysis |
+| Required | MUST |
+| Tags | Annotations |
 
 <br>
 
@@ -461,17 +516,6 @@ The `uns` component contains more general information and fields with formatting
 | Annotator | Computed |
 | Value | A json storing the entire cell annotation schema (CAS) information. |
 | Type| `json` |
-| Required | RECOMMENDED |
-| Tags | Tooling |
-
-<br>
-
-#### cellannotation_schema_version
-| Key | cellannotation_schema_version |
-| :-- | :-- |
-| Annotator | Computed |
-| Value | A version id for the CAS schema. |
-| Type| `str` |
 | Required | RECOMMENDED |
 | Tags | Tooling |
 
