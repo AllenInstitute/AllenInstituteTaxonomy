@@ -11,7 +11,7 @@ obs,assay,Curator,Human-readable sequencing modality with a corresponding EFO on
 obs,assay_ontology_term_id,Curator/Computed,"Most appropriate EFO ontology term for assay. (e.g., ""10x 3' v2""=""EFO:0009899"", ""10x 3' v3""=""EFO:0009922"", ""Smart-seq""=""EFO:0008930"")",Categorical,RECOMMENDED,Assigned metadata
 obs,organism,Curator,Species from which cells were collected.,Categorical,MUST,Assigned metadata
 obs,organism_ontology_term_id,Curator/Computed,NCBITaxon identifier; MUST be a child of NCBITaxon:33208.,Categorical,RECOMMENDED,Assigned metadata
-obs,donor_age,Curator,Currently a free text field for defining the age of the donor.,numeric,MUST,Assigned metadata
+obs,development_stage,Curator,Currently a free text field for defining the developmental stage of the donor.,Categorical,RECOMMENDED,Assigned metadata
 obs,anatomical_region,Curator,Human-readable name for `anatomical_region_ontology_term_id`.,Categorical,MUST,Assigned metadata
 obs,anatomical_region_ontology_term_id,Curator/Computed,UBERON terms for `anatomical_region` field.,Categorical,RECOMMENDED,Assigned metadata
 obs,brain_region_ontology_term_id,Curator/Computed,"Brain region IDs from one of the brain-bican atlases for the `anatomical_region` field. Currently includes DHBA, HBA, and MBA, but will expand.",Categorical,RECOMMENDED,Assigned metadata
