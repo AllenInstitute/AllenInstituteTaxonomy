@@ -242,7 +242,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Key | self_reported_ethnicity |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | This MUST be a child of PATO:0001894 for phenotypic sex or "unknown" if unavailable. |
+| Value | Human readable term for ethnicity corresponding to the most relevant HANCESTRO term (or terms) for ethnicity, or "unknown" if not known or not willing to share. |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
