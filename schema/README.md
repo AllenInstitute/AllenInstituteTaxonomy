@@ -1,6 +1,6 @@
 # Allen Institute Taxonomy schema
 
-We have developed a compartmenatlized schema for storing all required aspects of a taxonomy. The fields in the AIT schema are associated to a broad category term (described below) which form a piece of the whole AIT file format. 
+We have developed [a compartmentalized schema](#schema) for storing all required aspects of a taxonomy. The fields in the AIT schema are associated to a broad category term (described below) which form a piece of the whole AIT file format. 
 
 *(Note: A pervious version of this standard is available **[as a Google Doc](https://docs.google.com/document/d/1nj6LHUPoo3JnNwZ7PTdniT9pBPsoJr1B/edit?usp=sharing&ouid=113573359044104089630&rtpof=true&sd=true)**).*
 
@@ -20,14 +20,18 @@ Described here are the broad categories that all fields are associated with.
   
 * **Tooling**: Includes fields required for specific tools (e.g., cellxgene, TDT, CAS, CAP, and cell type annotation) that are not strictly part of the taxonomy but are required to inter-operate between various tools.
 
-<!-- Here is a graphical representation of these terms in the context of data, metadata, and taxonomies:
-![image](https://github.com/AllenInstitute/scrattch.taxonomy/assets/25486679/eaf6b3d3-0b5f-49fc-9a49-2b7168605964) -->
+Here is a graphical representation of these terms in the context of data, metadata, and taxonomies:
+<img src="https://github.com/user-attachments/assets/11f214d6-aefe-475d-8eca-d23e9984496a" width="800" alt="Graphical representation of schema">
+
+### h5ad file organization
+
+Within each broad categorical term, fields are ordered by their location in the anndata object: X (data), raw (data), obs (cell metadata), obsm (cell-shaped matrices), var (gene metadata), varm (gene-shaped matrices), and uns (or 'header'; everything else).
+
+<img src="https://github.com/user-attachments/assets/b9311199-1650-4776-92ba-8aecb800b971" width="500" alt="h5ad graphic">
 
 ## Schema
 
-Within each broad categorical term, fields are ordered by their location in the anndata object: X, raw, obsm, obs, var, uns.
-
-<!-- ![Schematic](https://github.com/AllenInstitute/scrattch.taxonomy/blob/main/schema/AIT_anndata_schema.png) -->
+This section lists all the required and recommended components of the AIT schema. **As of February 2025, the most recent version of the schema in a tabular format and that is used directly in the `scrattch` packages [can be found here](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/schema/AIT_schema_01_29_25.csv)**.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14), [RFC2119](https://www.rfc-editor.org/rfc/rfc2119.txt), and [RFC8174](https://www.rfc-editor.org/rfc/rfc8174.txt) when, and only when, they appear in all capitals, as shown here.
 
