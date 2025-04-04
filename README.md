@@ -1,6 +1,10 @@
 # Allen Institute Taxonomy (AIT)
 
-To distribute Allen Institute Taxonomies (AIT) we define an **[`anndata` .h5ad file](https://anndata.readthedocs.io/en/latest/index.html)** which encapsulates the essential components of a taxonomy required for downstream analysis with a **[formalized schema](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/schema/README.md)**. *For information on how to build and work with AIT files, see the companion **[scrattch R libraries](https://github.com/AllenInstitute/scrattch)***.
+To distribute Allen Institute Taxonomies (AIT) we define an **[`anndata` .h5ad file](https://anndata.readthedocs.io/en/latest/index.html)** which encapsulates the essential components of a taxonomy required for downstream analysis with a **[formalized schema](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/schema/README.md)**. 
+
+*For information on how to build and work with AIT files, see the companion **[scrattch R libraries](https://github.com/AllenInstitute/scrattch)***.
+
+*For a list of available taxonomies in AIT format, see **[this table of available taxonomies](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/taxonomies.md)***
 
 ## Overview
 
