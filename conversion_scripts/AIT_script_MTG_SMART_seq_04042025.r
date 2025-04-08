@@ -3,7 +3,7 @@
 
 # This script describes how we created an AIT taxonomy (scrattch v1.1) of the taxonomy for "Human MTG SMART-seq (2018)"  (https://portal.brain-map.org/atlases-and-data/rnaseq/human-mtg-smart-seq).
 
-# This code was run within the scrattch docker environment using docker://jeremyinseattle/scrattch:1.1.2 and may produde different results if run in any other environment.
+# This code was run within the scrattch docker environment using docker://alleninst/scrattch:1.1.2 and may produde different results if run in any other environment.
 
 
 ######################################################################################
@@ -135,7 +135,7 @@ AIT.anndata = buildTaxonomy(title="Human_MTG_SMART_seq_04042025",
                             embeddings = tsne, # Use pre-existing t-SNE coordinates
                             ##
                             dend = dend, ## Pre-computed dendrogram
-                            taxonomyDir = getwd(), ## This is where our taxonomy will be created
+                            taxonomyDir = taxonomyDir, ## This is where our taxonomy will be created
 							addMapMyCells = TRUE, 
                             ##
                             subsample=1000000)  ## Using a huge number since we don't want to subsample
