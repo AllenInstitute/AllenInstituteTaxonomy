@@ -419,10 +419,11 @@ The `uns` component contains more general information and fields with formatting
 | Key | dend |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | A json formatted dendrogram encoding the taxonomy hierarchy. Either computed or derived from cluster groupings.  |
+| Value | A json formatted dendrogram encoding the taxonomy hierarchy (see notes). Either computed or derived from cluster groupings.  |
 | Type| `json` |
 | Required | RECOMMENDED |
 | Tags | Annotations |
+| Notes | `dend` must include four components (derived in R from the `hclust` function in the `stats` library) and can optionally include any other components. <br> **merge**: A [[list]] that describes the sequential merging [steps] of clusters at each step of the hierarchical clustering process into individual tree "nodes". Each [row] of the merge list represents a merging step. Negative values steps indicate the indices of individual observations (e.g., clusters), while positive values indicate nodes. <br> **node_heights**: A vector containing the heights (or distances) at which the clusters were merged. Typically, these heights represent the dissimilarity between the merged clusters. <br> **labels**: Cluster names corresponding to every leaf node in order (after reordering by the "order" value). More generally this is a vector of labels for the observations that were clustered.   <br> **order**: This is a vector that specifies the order in which the observations should be arranged to produce a dendrogram without crossing branches. If labels are ordered from left to right on the tree, then order would be [1,2,3,...,N] |
 
 <br>
 
