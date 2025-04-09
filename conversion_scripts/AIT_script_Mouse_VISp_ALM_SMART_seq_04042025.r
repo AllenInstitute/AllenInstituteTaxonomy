@@ -28,7 +28,9 @@ print("========== Download and read in the reference taxonomy from Allen Brain M
 ## Download the data
 # Prior to running the code, download this file and upzip in your working directory: https://celltypes.brain-map.org/api/v2/well_known_file_download/694416044
 
-# ***NOTE***: we also need the dendrogram and t-SNE coordinates, neither of which I could find publicly. I took these from internal sources and have imported them into the AIT file below and have also posted them in the GitHub data folder here: 
+# ***NOTE***: we also need the dendrogram and t-SNE coordinates, neither of which I could find publicly. I took these from internal sources and have imported them into the AIT file below and have also posted them in the GitHub data folder.  
+
+# ***NOTE***: The published dendrogram is not a binary tree and therefore is incompatible with scrattch.taxonomy at this time. For now we are provided the dendrogram on GitHub, but are creating a new tree for the AIT file.
 
 # ***NOTE***: two of the cluster names have changed between publication of the data and what was used in this paper. For this AIT file we CHANGE the cluster names to align with what is in the paper.
 
@@ -100,17 +102,21 @@ taxonomy.metadata$anatomical_region = taxonomy.metadata$brain_region
 taxonomy.metadata$is_primary_data   = TRUE
 taxonomy.metadata$disease           = "control" 
 
+## Rename anatomic structures
+taxonomy.metadata$anatomical_region[taxonomy.metadata$anatomical_region=="ALM"] = "somatomotor area"  # Parent structure to ALM, which is not in ontologies
+taxonomy.metadata$anatomical_region[taxonomy.metadata$anatomical_region=="VISp"] = "primary visual area"
+
 ## Check taxonomy metadata aligns with AIT standard and perform minor error corrections
 ## Also add ontology terms corresponding to the above schema elements (and can also correct misspellings, etc.)
-full.taxonomy.anno <- computeOntologyTerms(taxonomy.metadata, standardize.metadata=TRUE, print.messages=TRUE) 
+full.taxonomy.anno <- computeOntologyTerms(taxonomy.metadata, standardize.metadata=TRUE, print.messages=TRUE, compute.brain.atlas.terms = "MBA") 
 # NOTE: We encourage reviewing the messages from this function CAREFULLY, as some assumptions are made when calculating ontology terms
-
-
-### NOTE I NEED TO UPDATE THE ABOVE CALL TO LOOK IN THE MOUSE BRAIN ONOLOGY AND NOT THE HUMAN ONE!!!
-
 
 ## Save final metadata data frame
 taxonomy.anno <- full.taxonomy.anno$metadata
+
+## Remove the UBERON terms since "somatomotor area" = "UBERON:8440076" is not included in the version I'm using
+## -- Future versions should include an update UBERON ontology
+taxonomy.anno <- taxonomy.anno[,colnames(taxonomy.anno)!="anatomical_region_ontology_term_id"]
 
 
 ######################################################################################
@@ -130,7 +136,8 @@ AIT.anndata = buildTaxonomy(title="Mouse_VISp_ALM_SMART_seq_04042025",
                             cluster_stats = NULL, ## Pre-computed cluster stats
                             embeddings = tsne, # Use pre-existing t-SNE coordinates
                             ##
-                            dend = dend, ## Pre-computed dendrogram
+                            dend = "highly_variable_genes_standard", ## Create new dendrogram for this file
+							reorder.dendrogram = TRUE,  ## Reorder leaf nodes to try and match original dendrogram
                             taxonomyDir = taxonomyDir, ## This is where our taxonomy will be created
 							addMapMyCells = TRUE, 
                             ##

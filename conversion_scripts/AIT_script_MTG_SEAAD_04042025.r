@@ -35,6 +35,9 @@ dend_url   <- "https://brainmapportal-live-4cc80a57cd6e400d854-f7fdcae.divio-med
 seaad_data <- read_h5ad("Reference_MTG_RNAseq_final-nuclei.2022-06-07.h5ad")
 seaad_dend <- readRDS("Reference_MTG_dend.rds")
 
+## Read in the UMAP from website. 
+umap <- read.csv("umap.csv",row.names=1)
+
 ## Get data and annotations
 taxonomy.counts = seaad_data$X
 cn <- c("sample_name","cluster_label","cluster_confidence","subclass_label","class_label",
@@ -94,7 +97,7 @@ AIT.anndata = buildTaxonomy(title="Human_MTG_SEAAD_04042025",
                             marker_genes = NULL,
                             ensembl_id = ensembl_id,
                             cluster_stats = NULL, ## Pre-computed cluster stats
-                            embeddings = "highly_variable_genes_standard", # Compute UMAP coordinates internally
+                            embeddings = umap, ## Use the precomputed UMAP coordinates
                             ##
                             dend = seaad_dend, ## Pre-computed dendrogram
                             taxonomyDir = getwd(), ## This is where our taxonomy will be created
