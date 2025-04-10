@@ -41,7 +41,7 @@ geneInfo      <- read.csv("data/mouse_VISp_2018-06-14_genes-rows.csv",row.names=
 sampInfo_VISp <- read.csv("data/mouse_VISp_2018-06-14_samples-columns.csv",row.names=1)
 kp_VISp       <- !is.element(sampInfo_VISp$class,c("Low Quality","No Class"))  ## Identify cells that failed QC.
 
-## Read in the VISp data
+## Read in the ALM data
 exons_ALM    <- as.matrix(fread("data/mouse_ALM_2018-06-14_exon-matrix.csv"),rownames=1)
 introns_ALM  <- as.matrix(fread("data/mouse_ALM_2018-06-14_intron-matrix.csv"),rownames=1)
 sampInfo_ALM <- read.csv("data/mouse_ALM_2018-06-14_samples-columns.csv",row.names=1)
