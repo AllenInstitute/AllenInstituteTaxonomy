@@ -21,13 +21,13 @@ Described here are the broad categories that all fields are associated with.
 * **Tooling**: Includes fields required for specific tools (e.g., cellxgene, TDT, CAS, CAP, and cell type annotation) that are not strictly part of the taxonomy but are required to inter-operate between various tools.
 
 Here is a graphical representation of these terms in the context of data, metadata, and taxonomies:
-<img src="https://github.com/user-attachments/assets/11f214d6-aefe-475d-8eca-d23e9984496a" width="800" alt="Graphical representation of schema">
+<img src="https://github.com/user-attachments/assets/11f214d6-aefe-475d-8eca-d23e9984496a" width="700" alt="Graphical representation of schema">
 
 ### h5ad file organization
 
 Within each broad categorical term, fields are ordered by their location in the anndata object: `X` (data), `raw` (data), `obs` (cell metadata), `obsm` (cell-shaped matrices), `var` (gene metadata), `varm` (gene-shaped matrices), and `uns` (or 'header'; everything else).  
 
-<img src="https://github.com/user-attachments/assets/e71d7bf3-fe3b-4a00-bcd7-bbf4f57f6713" width="500" alt="h5ad graphic">
+<img src="https://github.com/user-attachments/assets/e71d7bf3-fe3b-4a00-bcd7-bbf4f57f6713" width="600" alt="h5ad graphic">
 
 **Taxonomy 'modes'** are a concept specific to AIT that allow multiple embedded subsets of the data to be stored in a single .h5ad file.  More detail about taxonomy modes and a separate schema describing how they work **[can be found here](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/schema/mode_schema.md)**.
 
