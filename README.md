@@ -4,7 +4,7 @@ To distribute Allen Institute Taxonomies (AIT) we define an **[`anndata` .h5ad f
 
 *For information on how to build and work with AIT files, see the companion **[scrattch R libraries](https://github.com/AllenInstitute/scrattch)***.
 
-*For a list of available taxonomies in AIT format, see **[this table of available taxonomies](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/taxonomies.md)***
+*For a list of available taxonomies in AIT format, see **[this table of available taxonomies](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/taxonomies.md)***.
 
 ## Overview
 
@@ -12,12 +12,14 @@ One major challenge in creating a cell type taxonomy schema is in definition of 
 
 ![Taxonomy_overview](https://github.com/AllenInstitute/scrattch.taxonomy/assets/25486679/9d36e6bc-db14-4d73-8011-23026756ec08)
 
-(Brief description of AIT and it's difference from CELLxGENE to be entered here.)
+(Brief description of AIT and it's difference from CELLxGENE to be entered here. Also link to version of schema table with new column indicating what is included in CELLxGENE.)
+
+**Taxonomy 'modes'** are a key concept specific to AIT that allow multiple embedded subsets of the data to be stored in a single .h5ad file.  More detail about taxonomy modes and a separate schema describing how they work **[can be found here](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/schema/mode_schema.md)**.
 
 ## Related efforts
 
 AIT is being developed alongside three complementary efforts for packaging of taxonomies, data sets, and associated metadata and annotations.
 
 1. **[Cell Annotation Platform (CAP)](https://celltype.info/)**: CAP 'is a centralized, community-driven platform for the creation, exploration, and storage of cell annotations for single-cell RNA-sequencing (scRNA-seq) datasets.' The Allen Institute and BICAN are partnering with CAP for annotation of brain (including basal ganglia) and spinal cord taxonomies.
-2. **[Cell Annotation Schema](https://github.com/cellannotation/cell-annotation-schema/) (CAS)**: Compatible with [Cell Annotation Platform] (CAP) and with [Taxonomy Development Tools (TdT)](https://brain-bican.github.io/taxonomy-development-tools/), functions as a store of extended information about cell sets, including ontology term mappings and evidence for annotation (from annotation transfer and marker expression). CAS complements other cell-centric and occasionally cluster-centric schema more commonly used. CAS has both a general schema and a BICAN-associated schema, and can be embedded in the header (`uns`) of an AIT file.
-3. **[Brain Knowledge Platform (BKP)]**: While not publicly laid out anywhere that I can find, the BKP schema is the data model used for [Jupyter Notebooks](https://alleninstitute.github.io/abc_atlas_access/intro.html) associated with the [Allen Brain Cell (ABC) Atlas](https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas) and will eventually power all novel content hosted on [Allen Brain Map](https://portal.brain-map.org/atlases-and-data).  Currently, any data sets to be included in ABC Atlas or [MapMyCells](https://portal.brain-map.org/atlases-and-data/bkp/mapmycells) must be ingested into BKP.
+2. **[Cell Annotation Schema](https://github.com/cellannotation/cell-annotation-schema/) (CAS)**: Compatible with CAP and with [Taxonomy Development Tools (TdT)](https://brain-bican.github.io/taxonomy-development-tools/), CAS functions as a store of extended information about cell sets, including ontology term mappings and evidence for annotation (from annotation transfer and marker expression). CAS complements other cell-centric and occasionally cluster-centric schema more commonly used. CAS has both a general schema and a BICAN-associated schema, and can be embedded in the header (`uns`) of an AIT file.
+3. **Brain Knowledge Platform (BKP)**: While not publicly laid out anywhere that I can find, the BKP schema is the data model used for [Jupyter Notebooks](https://alleninstitute.github.io/abc_atlas_access/intro.html) associated with the [Allen Brain Cell (ABC) Atlas](https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas) and will eventually power all novel content hosted on [Allen Brain Map](https://portal.brain-map.org/atlases-and-data).  Currently, any data sets to be included in ABC Atlas or [MapMyCells](https://portal.brain-map.org/atlases-and-data/bkp/mapmycells) must be ingested into BKP.
