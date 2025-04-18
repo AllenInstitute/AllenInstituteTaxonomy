@@ -2,7 +2,7 @@
 
 We have developed [a compartmentalized schema](#schema) for storing all required aspects of a taxonomy. The fields in the AIT schema are associated to a broad category term (described below) which form a piece of the whole AIT file format. 
 
-*(Note: A pervious version of this standard is available **[as a Google Doc](https://docs.google.com/document/d/1nj6LHUPoo3JnNwZ7PTdniT9pBPsoJr1B/edit?usp=sharing&ouid=113573359044104089630&rtpof=true&sd=true)**).*
+*(Note: A previous version of this standard is available **[as a Google Doc](https://docs.google.com/document/d/1nj6LHUPoo3JnNwZ7PTdniT9pBPsoJr1B/edit?usp=sharing&ouid=113573359044104089630&rtpof=true&sd=true)**).*
 
 ### Schema category terms
 
@@ -25,9 +25,11 @@ Here is a graphical representation of these terms in the context of data, metada
 
 ### h5ad file organization
 
-Within each broad categorical term, fields are ordered by their location in the anndata object: X (data), raw (data), obs (cell metadata), obsm (cell-shaped matrices), var (gene metadata), varm (gene-shaped matrices), and uns (or 'header'; everything else).
+Within each broad categorical term, fields are ordered by their location in the anndata object: `X` (data), `raw` (data), `obs` (cell metadata), `obsm` (cell-shaped matrices), `var` (gene metadata), `varm` (gene-shaped matrices), and `uns` (or 'header'; everything else).  
 
-<img src="https://github.com/user-attachments/assets/b9311199-1650-4776-92ba-8aecb800b971" width="500" alt="h5ad graphic">
+<img src="https://github.com/user-attachments/assets/e71d7bf3-fe3b-4a00-bcd7-bbf4f57f6713" width="500" alt="h5ad graphic">
+
+**Taxonomy 'modes'** are a concept specific to AIT that allow multiple embedded subsets of the data to be stored in a single .h5ad file.  More detail about taxonomy modes and a separate schema describing how they work **[can be found here](https://github.com/AllenInstitute/AllenInstituteTaxonomy/blob/main/schema/mode_schema.md)**.
 
 ## Schema
 
