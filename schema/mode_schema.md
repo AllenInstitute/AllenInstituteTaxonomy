@@ -64,7 +64,7 @@ The `uns` component contains more general information and fields with formatting
 #### mode
 | Key | mode |
 | :-- | :-- |
-| Annotator | Curator/Computed |
+| Annotator | Curator |
 | Value | Indicator of which child of the parent taxonomy to utilize. Mode determines cells to remove based on `filter` as well as switching to relevant analysis components of the `uns` related to child taxonomy specific analysis tooling. |
 | Type| `str` |
 | Used for | All `scrattch` functions involving modes. |
@@ -78,17 +78,18 @@ The `uns` component contains more general information and fields with formatting
 | Value | Indicator of which cells to use for a given taxonomy mode saved as a list of booleans for each cell. TRUE indicates a cell should be removed and FALSE indicates the cell should not be removed. Each entree in this list is named for the relevant "mode" and has TRUE/FALSE calls indicating whether a cell is filtered out. e.g., the "standard" taxonony is all FALSE, modulo subsampling. |
 | Type| `list[[mode]][bool]` |
 | Used for | Preparing taxonomy modes for associated downstream analyses.  |
+| Notes | Listed as "Curator/Computed" but is mostly "Curator". The "Computed" components (e.g., specific subsampled cells and/or TRUE/FALSE vector based on selected clusters) still require curator input.    |
 
 <br>
 
 #### dend
 | Key | dend |
 | :-- | :-- |
-| Annotator | Curator |
+| Annotator | Curator/Computed |
 | Value | A json formatted dendrogram encoding the taxonomy hierarchy (see notes). Either computed or derived from cluster groupings.  |
 | Type| `list[[mode]][json]` |
 | Used for | `tree.map` mapping in `scrattch.mapping` and defining quality control metrics and cluster membership in `scrattch.patchseq` |
-| Notes | `dend` must include four components (derived in R from the `hclust` function in the `stats` library) and can optionally include any other components. <br> **merge**: A [[list]] that describes the sequential merging [steps] of clusters at each step of the hierarchical clustering process into individual tree "nodes". Each [row] of the merge list represents a merging step. Negative values steps indicate the indices of individual observations (e.g., clusters), while positive values indicate nodes. <br> **node_heights**: A vector containing the heights (or distances) at which the clusters were merged. Typically, these heights represent the dissimilarity between the merged clusters. <br> **labels**: Cluster names corresponding to every leaf node in order (after reordering by the "order" value). More generally this is a vector of labels for the observations that were clustered.   <br> **order**: This is a vector that specifies the order in which the observations should be arranged to produce a dendrogram without crossing branches. If labels are ordered from left to right on the tree, then order would be [1,2,3,...,N] <br> **markers(?)** Lists of marker genes for each node of the tree (*NOTE: THIS NEEDS TO BE DESCRIBED BETTER*). |
+| Notes | `dend` must include four components (derived in R from the `hclust` function in the `stats` library) and can optionally include any other components. <br> **merge**: A [[list]] that describes the sequential merging [steps] of clusters at each step of the hierarchical clustering process into individual tree "nodes". Each [row] of the merge list represents a merging step. Negative values steps indicate the indices of individual observations (e.g., clusters), while positive values indicate nodes. <br> **node_heights**: A vector containing the heights (or distances) at which the clusters were merged. Typically, these heights represent the dissimilarity between the merged clusters. <br> **labels**: Cluster names corresponding to every leaf node in order (after reordering by the "order" value). More generally this is a vector of labels for the observations that were clustered.   <br> **order**: This is a vector that specifies the order in which the observations should be arranged to produce a dendrogram without crossing branches. If labels are ordered from left to right on the tree, then order would be [1,2,3,...,N] <br> **markers** Named character vectors of marker genes for each node of the tree, where the value indicates the strength of the gene as a marker and the name corresponds to the gene name (as listed in `var`). <br> Note: If a dendrogram is not provided, then one can be computed for tree mapping. |
 
 <br>
 
