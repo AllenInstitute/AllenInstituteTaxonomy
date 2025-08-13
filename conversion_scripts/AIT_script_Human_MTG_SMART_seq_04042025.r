@@ -55,7 +55,7 @@ taxonomy.metadata <- sampInfo[kp,]
 # NOTE: There are 337 cells with missing tsne coordinates, which we will set to 0 for this file
 
 tsne <- read.csv("Human_MTG_SMART_seq_04042025_tsne.csv",row.names=1)
-tsne <- tsne[match(rownames(tsne),(taxonomy.metadata$seq_name)),]
+tsne <- tsne[match((taxonomy.metadata$seq_name),rownames(tsne)),]  # Error correction 8/13/25
 rownames(tsne)    <- rownames(taxonomy.metadata)
 tsne[is.na(tsne)] <- 0
 
