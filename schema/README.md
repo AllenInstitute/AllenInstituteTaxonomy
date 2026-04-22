@@ -308,6 +308,21 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Required | MUST |
 | Tags | Assigned metadata |
 
+## `obsm` (Embeddings)
+
+The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
+
+#### X_[embedding]
+| Key | X_[embedding] |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
+| Type| `numpy.ndarray` |
+| Required | MUST |
+| Tags | Analysis |
+
+<br>
+
 ## `var`
 
 `var` is a [pandas.Dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
@@ -355,6 +370,21 @@ The `var` component contains gene level information.
 | Type| `bool` |
 | Required | RECOMMENDED |
 | Tags | Analysis |
+
+<br>
+
+## `varm` (Gene Loadings)
+
+The `varm` component contains all gene-level multidimensional annotations of the taxonomy (gene x dim). Curators MAY annotate one or more gene-loading matrices (e.g. mean expressions for a given gene) as numpy.ndarrays in varm.
+
+#### cluster_id_mean_expr
+| Key | cluster_id_mean_expr |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | Marker gene expression in on-target and off-target cell populations, useful for patchseq analysis.  Also includes information about KL divergence calculations and associated QC calls. Defined by buildPatchseqTaxonomy. |
+| Type| `numpy.ndarray` |
+| Required | MUST |
+| Tags | Annotations |
 
 <br>
 
@@ -417,15 +447,15 @@ The `uns` component contains more general information and fields with formatting
 
 <br>
 
-#### dend
-| Key | dend |
+#### dendrogram
+| Key | dendrogram |
 | :-- | :-- |
 | Annotator | Curator |
 | Value | A json formatted dendrogram encoding the taxonomy hierarchy (see notes). Either computed or derived from cluster groupings.  |
 | Type| `json` |
 | Required | RECOMMENDED |
 | Tags | Annotations |
-| Notes | `dend` must include four components (derived in R from the `hclust` function in the `stats` library) and can optionally include any other components. <br> **merge**: A [[list]] that describes the sequential merging [steps] of clusters at each step of the hierarchical clustering process into individual tree "nodes". Each [row] of the merge list represents a merging step. Negative values steps indicate the indices of individual observations (e.g., clusters), while positive values indicate nodes. <br> **node_heights**: A vector containing the heights (or distances) at which the clusters were merged. Typically, these heights represent the dissimilarity between the merged clusters. <br> **labels**: Cluster names corresponding to every leaf node in order (after reordering by the "order" value). More generally this is a vector of labels for the observations that were clustered.   <br> **order**: This is a vector that specifies the order in which the observations should be arranged to produce a dendrogram without crossing branches. If labels are ordered from left to right on the tree, then order would be [1,2,3,...,N] |
+| Notes | `dendrogram` must include four components (derived in R from the `hclust` function in the `stats` library) and can optionally include any other components. <br> **merge**: A [[list]] that describes the sequential merging [steps] of clusters at each step of the hierarchical clustering process into individual tree "nodes". Each [row] of the merge list represents a merging step. Negative values steps indicate the indices of individual observations (e.g., clusters), while positive values indicate nodes. <br> **node_heights**: A vector containing the heights (or distances) at which the clusters were merged. Typically, these heights represent the dissimilarity between the merged clusters. <br> **labels**: Cluster names corresponding to every leaf node in order (after reordering by the "order" value). More generally this is a vector of labels for the observations that were clustered.   <br> **order**: This is a vector that specifies the order in which the observations should be arranged to produce a dendrogram without crossing branches. If labels are ordered from left to right on the tree, then order would be [1,2,3,...,N] |
 
 <br>
 
@@ -484,17 +514,6 @@ The `uns` component contains more general information and fields with formatting
 
 <br>
 
-#### cluster_id_median_expr
-| Key | cluster_id_median_expr |
-| :-- | :-- |
-| Annotator | Curator/Computed |
-| Value | Marker gene expression in on-target and off-target cell populations, useful for patchseq analysis.  Also includes information about KL divergence calculations and associated QC calls. Defined by buildPatchseqTaxonomy. |
-| Type| `numpy.ndarray` |
-| Required | MUST |
-| Tags | Annotations |
-
-<br>
-
 #### default_embedding
 | Key | default_embedding |
 | :-- | :-- |
@@ -529,18 +548,3 @@ The `uns` component contains more general information and fields with formatting
 <br>
 
 * `cell_annotation_schema`: extended `calculated metadata` about annotations and labelsets stores in `uns` as in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) format under `labelsets`.  
-
-## `obsm` (Embeddings)
-
-The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
-
-#### X_[embedding]
-| Key | X_[embedding] |
-| :-- | :-- |
-| Annotator | Curator/Computed |
-| Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
-| Type| `numpy.ndarray` |
-| Required | MUST |
-| Tags | Analysis |
-
-<br>
