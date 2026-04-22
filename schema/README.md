@@ -383,7 +383,7 @@ The `varm` component contains all gene-level multidimensional annotations of the
 | Annotator | Curator/Computed |
 | Value | Marker gene expression in on-target and off-target cell populations, useful for patchseq analysis.  Also includes information about KL divergence calculations and associated QC calls. Defined by buildPatchseqTaxonomy. |
 | Type| `numpy.ndarray` |
-| Required | MUST |
+| Required | RECOMMENDED |
 | Tags | Annotations |
 
 <br>
