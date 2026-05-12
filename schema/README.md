@@ -1,6 +1,6 @@
 # Allen Institute Taxonomy schema
 
-We have developed [a compartmentalized schema](#schema) for storing all required aspects of a taxonomy. The fields in the AIT schema are associated to a broad category term (described below) which form a piece of the whole AIT file format. 
+We have developed [a compartmentalized schema](#schema) for storing all required aspects of a taxonomy. The fields in the AIT schema are associated to a broad category term (described below) which form a piece of the whole AIT file format. Dated CSV versions of the schema are saved in this folder, with the most up-to-date version also saved as "AIT_schema.csv".
 
 *(Note: A previous version of this standard is available **[as a Google Doc](https://docs.google.com/document/d/1nj6LHUPoo3JnNwZ7PTdniT9pBPsoJr1B/edit?usp=sharing&ouid=113573359044104089630&rtpof=true&sd=true)**).*
 
