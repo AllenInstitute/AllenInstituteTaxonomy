@@ -4,7 +4,7 @@ raw,raw.X,Curator,raw.X component contains a count matrix in scipy.sparse.csr_ma
 obs,index,Curator,Unique identifier corresponding to each individual cell.,Index,MUST,Assigned metadata
 obs,cluster_id,Curator,Identifier for cell set computed from a clustering algorithm. Values are human readable names corresponding to IDs and additional information in the uns.,Categorical,MUST,Annotations
 obs,[cellannotation_setname],Curator,Column name in `obs` is the string [cellannotation_setname] and the values describe an annotation level of the taxonomy. Values are human-readable names corresponding to IDs and additional information in the uns.,Categorical,RECOMMENDED,Annotations
-obs,cell_type_ontology_term,Curator,This MUST be a CL term or 'CL:0000003' for native cell if unknown.,Categorical,RECOMMENDED,Annotations
+obs,cell_type_ontology_term_id,Curator,This MUST be a CL term or 'CL:0000003' for native cell if unknown.,Categorical,RECOMMENDED,Annotations
 obs,load_id,Curator,Identifier for the sequencing library for which molecular measurements from a specific set of cells is derived. From BKP.,Categorical,MUST,Assigned metadata
 obs,donor_id,Curator,Identifier for the unique individual; called `donor_label` in BKP.,Categorical,MUST,Assigned metadata
 obs,assay,Curator,Human-readable sequencing modality with a corresponding EFO ontology term. From BKP.,Categorical,MUST,Assigned metadata
@@ -38,7 +38,7 @@ uns,dendrogram,Curator,JSON formatted dendrogram encoding taxonomy hierarchy.,js
 uns,hierarchy,Curator,Ordering of cluster_id and higher-level groupings.,dictionary,MUST,Annotations
 uns,mode,Computed,Indicator of which taxonomy child to utilize.,str,MUST,Tooling
 uns,filter,Computed,List of booleans indicating cells for child taxonomy modes.,list[bool],MUST,Tooling
-uns,qualty_control_markers,Computed,Marker gene expression for patchseq analysis.,data.frame,RECOMMENDED,Analysis
+uns,quality_control_markers,Computed,Marker gene expression for patchseq analysis.,data.frame,RECOMMENDED,Analysis
 uns,cluster_info,Computed,Data.frame of cluster information.,data.frame,MUST,Annotations
 uns,default_embedding,Curator/Computed,Default embedding to display; matches a key in obsm.,str,RECOMMENDED,Tooling
 uns,schema_version,Computed,Allen Institute Taxonomy schema version.,str,MUST,Tooling

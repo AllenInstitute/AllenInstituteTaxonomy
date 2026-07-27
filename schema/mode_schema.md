@@ -2,12 +2,12 @@
 AIT files include the concept of a taxonomy mode. A taxonomy mode represents a specific **subset** of cells included in the AIT file, along with all of the associated variables required for performing mapping and patch-seq analysis. Upon creation, an AIT file will default to the ‘standard’ mode (sometimes called the ‘parent taxonomy’), which includes all or a subsampled selection of cells from every `cluster_id` in the taxonomy.  Additional taxonomy modes (or ‘child taxonomies’) represent specific subsets of cells in the ‘standard’ mode and can represent a combination of filtered cell types and/or additional subsampling.  
 
 ## Why build taxonomy modes
-Taxonomy modes provide flexibility to perform many different analyses using the same base taxonomy, rather than needing to save multiple copies of the same taxomy.  Common use cases for taxonomy modes include: 
+Taxonomy modes provide flexibility to perform many different analyses using the same base taxonomy, rather than needing to save multiple copies of the same taxonomy.  Common use cases for taxonomy modes include: 
 
 * **Regional taxonomies**: for example, the mouse basal ganglia taxonomy represents all cells from a subset of clusters from the whole mouse brain taxonomy from Yao et al 2023.
 * **Patch-seq analysis**: In both human and mouse cortex, we subset taxonomies to include only neuronal cell types since patch-seq data is often noisy and cells will erroneously map to glial types if all clusters are included
 * **Quality control**: When all cells are included by default, modes can be created that omit all clusters and cells failing QC
-* **Algorithm testing**: To quickly testing algorithms, it is often useful to define a mode with just a handful of clusters for testing.
+* **Algorithm testing**: To quickly test algorithms, it is often useful to define a mode with just a handful of clusters for testing.
 
 ## What mode-specific variables are stored in an AIT file
 Mode-specific variables can either be user-curated (U) or computed (C) and fall in a few general categories:
@@ -135,7 +135,7 @@ The `uns` component contains more general information and fields with formatting
 <br>
 
 #### QC_markers_[mode]
-| Key | memb |
+| Key | QC_markers_[mode] |
 | :-- | :-- |
 | Annotator | Computed |
 | Value | A list of several variables required for applying [`patchseqQC`](https://github.com/PavlidisLab/patchSeqQC/tree/master) to a set of query data for QCing patchseq data. Can be defined separately for each [mode]. (See notes below) |
