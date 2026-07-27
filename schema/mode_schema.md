@@ -35,7 +35,7 @@ The `var` component contains gene level information.  These variables either mat
 
 <br>
 
-#### marker_genes_[mode]
+#### marker_genes_[set_name]
 | Key | marker_genes_[set_name] |
 | :-- | :-- |
 | Annotator | Curator |
@@ -45,7 +45,7 @@ The `var` component contains gene level information.  These variables either mat
 
 <br>
 
-### `obsm` (Embeddings)
+## `obsm` (Embeddings)
 
 The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.  These variables either match or supplement variables from the [`obsm` component of the general schema](https://github.com/AllenInstitute/AllenInstituteTaxonomy/tree/main/schema#obsm-embeddings).
 
@@ -57,7 +57,7 @@ The `obsm` component contains all dimensionality reductions of the taxonomy (cel
 | Type| `numpy.ndarray` |
 | Used for | (Not currently used in `scrattch` packages, but planned future usage for visualization and constellation diagram creation.)  |
 
-### `uns`
+## `uns`
 
 The `uns` component contains more general information and fields with formatting incompatible with the above components. These variables either match or supplement variables from the [`uns` component of the general schema](https://github.com/AllenInstitute/AllenInstituteTaxonomy/tree/main/schema#uns).
 
@@ -142,4 +142,5 @@ The `uns` component contains more general information and fields with formatting
 | Type| `list[[mode]][list]` |
 | Used for | Defining quality control metrics in `scrattch.patchseq`. |
 | Notes | **`QC_markers_[[mode]][['markers']]`**: Output from the `defineClassMarkers` function. <br> **`QC_markers_[[mode]][['allMarkers']]`**: A character vector of all genes included in 'markers' above. <br> **`QC_markers_[[mode]][['countsQC']]`**: Count matrix of reference data set including the subset of genes and cells needed for `patchseqQC`. Required because X and raw.X are optional. <br> **`QC_markers_[[mode]][['cpmQC']]`**: Count per million of `countsQC` above. Required because all genes not saved in `countsQC`. <br> **`QC_markers_[[mode]][['classBr']]`**: Categorical vector (e.g., factor) of class-level calls, which mixes two [cellannotation_setname] levels of the hierarchy for on vs. off-target types. <br> **`QC_markers_[[mode]][['subclassF']]`**: Categorical vector (e.g., factor) of subclass-level calls. <br>  |
+
 <br>

@@ -117,7 +117,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Identifier for the sequencing library for which molecular measurements from a specific set of cells is derived. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -128,7 +128,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Identifier for the unique individual, ideal from the specimen portal (or other upstream source). This is called `donor_label` in the **BKP**. Should converge on a standard term. More than one identifier may be needed, but ideally for the analysis only a single one is retained and stored here. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -139,7 +139,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Human-readable sequencing modality which should have a corresponding EFO ontology term. e.g., 'Smart-seq2' corresponds to 'EFO:0008931', '10x 3' v3' corresponds to 'EFO:0009922'. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -150,7 +150,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator/Computed |
 | Value | Most appropriate EFO ontology term for assay. (e.g.,"10x 3' v2"="EFO:0009899","10x 3' v3"="EFO:0009922","Smart-seq"="EFO:0008930"). |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
@@ -161,7 +161,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Species from which cells were collected. This MUST be the human-readable name assigned to the value of organism_ontology_term_id
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -172,7 +172,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Computed |
 | Value | NCBITaxon identifier which MUST be a child of NCBITaxon:33208 for Metazoa. Ontology terms are mapped from `organism` using the [GeneOrthology](https://github.com/AllenInstitute/GeneOrthology) github repo. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
@@ -362,7 +362,7 @@ The `var` component contains gene level information.
 
 <br>
 
-#### marker_genes[_name]
+#### marker_genes_[set_name]
 | Key | marker_genes_[set_name] |
 | :-- | :-- |
 | Annotator | Curator |
