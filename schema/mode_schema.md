@@ -35,8 +35,8 @@ The `var` component contains gene level information.  These variables either mat
 
 <br>
 
-#### marker_genes_[set_name]
-| Key | marker_genes_[set_name] |
+#### marker_genes_[mode]
+| Key | marker_genes_[mode] |
 | :-- | :-- |
 | Annotator | Curator |
 | Value | A logical vector indicating which genes are markers. Multiple marker gene sets can be specified.  |

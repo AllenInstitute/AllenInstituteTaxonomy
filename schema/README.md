@@ -237,7 +237,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Key | self_reported_sex_ontology_term_id |
 | :-- | :-- |
 | Annotator | Curator/Computed |
-| Value | A child of PATO:0001894 for phenotypic sex or "unknown" if unavailable or if sex corresponds to something not included in PATO. Female = PATO:0000383 and Male = PATO:0000384. |
+| Value | A child of PATO:0001894 for phenotypic sex or "unknown" if unavailable or if sex corresponds to something not included in PATO. Female = PATO_0000383 and Male = PATO_0000384. |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
@@ -362,8 +362,8 @@ The `var` component contains gene level information.
 
 <br>
 
-#### marker_genes_[set_name]
-| Key | marker_genes_[set_name] |
+#### marker_genes[_name]
+| Key | marker_genes[_name] |
 | :-- | :-- |
 | Annotator | Curator |
 | Value | A logical vector indicating which genes are markers. Multiple marker gene sets can be specified. |
