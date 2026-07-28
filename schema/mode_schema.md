@@ -2,12 +2,12 @@
 AIT files include the concept of a taxonomy mode. A taxonomy mode represents a specific **subset** of cells included in the AIT file, along with all of the associated variables required for performing mapping and patch-seq analysis. Upon creation, an AIT file will default to the ‘standard’ mode (sometimes called the ‘parent taxonomy’), which includes all or a subsampled selection of cells from every `cluster_id` in the taxonomy.  Additional taxonomy modes (or ‘child taxonomies’) represent specific subsets of cells in the ‘standard’ mode and can represent a combination of filtered cell types and/or additional subsampling.  
 
 ## Why build taxonomy modes
-Taxonomy modes provide flexibility to perform many different analyses using the same base taxonomy, rather than needing to save multiple copies of the same taxomy.  Common use cases for taxonomy modes include: 
+Taxonomy modes provide flexibility to perform many different analyses using the same base taxonomy, rather than needing to save multiple copies of the same taxonomy.  Common use cases for taxonomy modes include: 
 
 * **Regional taxonomies**: for example, the mouse basal ganglia taxonomy represents all cells from a subset of clusters from the whole mouse brain taxonomy from Yao et al 2023.
 * **Patch-seq analysis**: In both human and mouse cortex, we subset taxonomies to include only neuronal cell types since patch-seq data is often noisy and cells will erroneously map to glial types if all clusters are included
 * **Quality control**: When all cells are included by default, modes can be created that omit all clusters and cells failing QC
-* **Algorithm testing**: To quickly testing algorithms, it is often useful to define a mode with just a handful of clusters for testing.
+* **Algorithm testing**: To quickly test algorithms, it is often useful to define a mode with just a handful of clusters for testing.
 
 ## What mode-specific variables are stored in an AIT file
 Mode-specific variables can either be user-curated (U) or computed (C) and fall in a few general categories:
@@ -36,7 +36,7 @@ The `var` component contains gene level information.  These variables either mat
 <br>
 
 #### marker_genes_[mode]
-| Key | marker_genes_[set_name] |
+| Key | marker_genes_[mode] |
 | :-- | :-- |
 | Annotator | Curator |
 | Value | A logical vector indicating which genes are markers. Multiple marker gene sets can be specified.  |
@@ -45,7 +45,7 @@ The `var` component contains gene level information.  These variables either mat
 
 <br>
 
-### `obsm` (Embeddings)
+## `obsm` (Embeddings)
 
 The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.  These variables either match or supplement variables from the [`obsm` component of the general schema](https://github.com/AllenInstitute/AllenInstituteTaxonomy/tree/main/schema#obsm-embeddings).
 
@@ -57,7 +57,7 @@ The `obsm` component contains all dimensionality reductions of the taxonomy (cel
 | Type| `numpy.ndarray` |
 | Used for | (Not currently used in `scrattch` packages, but planned future usage for visualization and constellation diagram creation.)  |
 
-### `uns`
+## `uns`
 
 The `uns` component contains more general information and fields with formatting incompatible with the above components. These variables either match or supplement variables from the [`uns` component of the general schema](https://github.com/AllenInstitute/AllenInstituteTaxonomy/tree/main/schema#uns).
 
@@ -135,11 +135,12 @@ The `uns` component contains more general information and fields with formatting
 <br>
 
 #### QC_markers_[mode]
-| Key | memb |
+| Key | QC_markers_[mode] |
 | :-- | :-- |
 | Annotator | Computed |
 | Value | A list of several variables required for applying [`patchseqQC`](https://github.com/PavlidisLab/patchSeqQC/tree/master) to a set of query data for QCing patchseq data. Can be defined separately for each [mode]. (See notes below) |
 | Type| `list[[mode]][list]` |
 | Used for | Defining quality control metrics in `scrattch.patchseq`. |
 | Notes | **`QC_markers_[[mode]][['markers']]`**: Output from the `defineClassMarkers` function. <br> **`QC_markers_[[mode]][['allMarkers']]`**: A character vector of all genes included in 'markers' above. <br> **`QC_markers_[[mode]][['countsQC']]`**: Count matrix of reference data set including the subset of genes and cells needed for `patchseqQC`. Required because X and raw.X are optional. <br> **`QC_markers_[[mode]][['cpmQC']]`**: Count per million of `countsQC` above. Required because all genes not saved in `countsQC`. <br> **`QC_markers_[[mode]][['classBr']]`**: Categorical vector (e.g., factor) of class-level calls, which mixes two [cellannotation_setname] levels of the hierarchy for on vs. off-target types. <br> **`QC_markers_[[mode]][['subclassF']]`**: Categorical vector (e.g., factor) of subclass-level calls. <br>  |
+
 <br>

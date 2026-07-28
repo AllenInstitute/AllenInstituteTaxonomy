@@ -82,7 +82,7 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Identifier for cell set computed from a clustering algorithm. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Annotations |
 
@@ -92,7 +92,7 @@ The `obs` component contains **cell-level metadata** summarized at the cell leve
 | Key | [cellannotation_setname] |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | Column name in `obs` is the string [cellannotation_setname] and the values are the strings describing an annotation level of the taxonomy.
+| Value | Column name in `obs` is the string [cellannotation_setname] and the values are the strings describing an annotation level of the taxonomy. |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Annotations |
@@ -105,7 +105,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Key | cell_type_ontology_term_id |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | This MUST be a CL term. If no appropriate high-level term can be found or the cell type is unknown, then it is STRONGLY RECOMMENDED to use "CL:0000003" for native cell.
+| Value | This MUST be a CL term. If no appropriate high-level term can be found or the cell type is unknown, then it is STRONGLY RECOMMENDED to use "CL:0000003" for native cell. |
 | Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Annotations |
@@ -117,7 +117,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Identifier for the sequencing library for which molecular measurements from a specific set of cells is derived. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -128,7 +128,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Identifier for the unique individual, ideal from the specimen portal (or other upstream source). This is called `donor_label` in the **BKP**. Should converge on a standard term. More than one identifier may be needed, but ideally for the analysis only a single one is retained and stored here. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -138,8 +138,8 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Key | assay |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | Human-readable sequencing modality which should have a corresponding EFO ontology term. e.g., 'Smart-seq2'corresponds to 'EFO:0008931', '10x 3' v3'corresponds to 'EFO:0009922'.
-| Type| `str` |
+| Value | Human-readable sequencing modality which should have a corresponding EFO ontology term. e.g., 'Smart-seq2' corresponds to 'EFO:0008931', '10x 3' v3' corresponds to 'EFO:0009922'. |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -149,9 +149,9 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Key | assay_ontology_term_id |
 | :-- | :-- |
 | Annotator | Curator/Computed |
-| Value | Most appropriate EFO ontology term for assay. (e.g.,"10x 3' v2"="EFO:0009899","10x 3' v3"="EFO:0009922","Smart-seq"="EFO:0008930").
-| Type| `str` |
-| Required | MUST |
+| Value | Most appropriate EFO ontology term for assay. (e.g.,"10x 3' v2"="EFO:0009899","10x 3' v3"="EFO:0009922","Smart-seq"="EFO:0008930"). |
+| Type| `Categorical` |
+| Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 <br>
@@ -161,7 +161,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Curator |
 | Value | Species from which cells were collected. This MUST be the human-readable name assigned to the value of organism_ontology_term_id
-| Type| `str` |
+| Type| `Categorical` |
 | Required | MUST |
 | Tags | Assigned metadata |
 
@@ -172,19 +172,19 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | :-- | :-- |
 | Annotator | Computed |
 | Value | NCBITaxon identifier which MUST be a child of NCBITaxon:33208 for Metazoa. Ontology terms are mapped from `organism` using the [GeneOrthology](https://github.com/AllenInstitute/GeneOrthology) github repo. |
-| Type| `str` |
+| Type| `Categorical` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 <br>
 
-#### donor_age
-| Key | donor_age |
+#### development_stage
+| Key | development_stage |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | Currently a free text field for defining the age of the donor. In **CELLxGENE** this is recorded in `development_stage_ontology_term_id` and is HsapDv if human, MmusDv if mouse.  I'm not sure what this means, but more generally, we should align with BICAN on how to deal with this value. |
+| Value | Currently a free text field for defining the developmental stage of the donor. |
 | Type| `Categorical` |
-| Required | MUST |
+| Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 <br>
@@ -239,7 +239,7 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Annotator | Curator/Computed |
 | Value | A child of PATO:0001894 for phenotypic sex or "unknown" if unavailable or if sex corresponds to something not included in PATO. Female = PATO_0000383 and Male = PATO_0000384. |
 | Type| `Categorical` |
-| Required | MUST |
+| Required | RECOMMENDED |
 | Tags | Assigned metadata |
 
 <br>
@@ -308,21 +308,6 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Required | MUST |
 | Tags | Assigned metadata |
 
-## `obsm` (Embeddings)
-
-The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
-
-#### X_[embedding]
-| Key | X_[embedding] |
-| :-- | :-- |
-| Annotator | Curator/Computed |
-| Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
-| Type| `numpy.ndarray` |
-| Required | MUST |
-| Tags | Analysis |
-
-<br>
-
 ## `var`
 
 `var` is a [pandas.Dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
@@ -344,7 +329,7 @@ The `var` component contains gene level information.
 | Key | ensembl_id |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | If the feature is a gene then this MUST be a gene ID from ensembl. Each index of the pandas.DataFrame MUST map to a unique emsembl_id identifiers for features. If present, the raw.var.ensembl_id MUST be identical to the var.ensembl_id. |
+| Value | If the feature is a gene then this MUST be a gene ID from ensembl. Each index of the pandas.DataFrame MUST map to a unique ensembl_id identifier for features. If present, the raw.var.ensembl_id MUST be identical to the var.ensembl_id. |
 | Type| `str` |
 | Required | RECOMMENDED |
 | Tags | Assigned metadata |
@@ -363,7 +348,7 @@ The `var` component contains gene level information.
 <br>
 
 #### marker_genes[_name]
-| Key | marker_genes_[set_name] |
+| Key | marker_genes[_name] |
 | :-- | :-- |
 | Annotator | Curator |
 | Value | A logical vector indicating which genes are markers. Multiple marker gene sets can be specified. |
@@ -407,7 +392,7 @@ The `uns` component contains more general information and fields with formatting
 | Key | dataset_purl |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | Link to molelcular data (cell x gene) if not present in X or raw.X. This can be an AWS S3 bucket or other permanent URL for the taxonomy expression data. |
+| Value | Link to molecular data (cell x gene) if not present in X or raw.X. This can be an AWS S3 bucket or other permanent URL for the taxonomy expression data. |
 | Type| `str` |
 | Required | RECOMMENDED |
 | Tags | Data |
@@ -463,7 +448,7 @@ The `uns` component contains more general information and fields with formatting
 | Key | hierarchy |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | An ordering of `cluster_id` and higher level groupings from `[cellannotation_setname]` where smaller numbers are broader types. E.g. {"Class": 0, "Subclass": 1, "cluser_id": 2}  |
+| Value | An ordering of `cluster_id` and higher level groupings from `[cellannotation_setname]` where smaller numbers are broader types. E.g. {"Class": 0, "Subclass": 1, "cluster_id": 2}  |
 | Type| `dict{str: int}` |
 | Required | MUST |
 | Tags | Annotations |
@@ -496,10 +481,10 @@ The `uns` component contains more general information and fields with formatting
 | Key | cluster_algorithm |
 | :-- | :-- |
 | Annotator | Curator |
-| Value | Full description of clustering parameters as a data.frame. |
-| Type| `data.frame` |
-| Required | MUST |
-| Tags | Annotations |
+| Value | Full description of clustering parameters. |
+| Type| `dictionary` |
+| Required | RECOMMENDED |
+| Tags | Tooling |
 
 <br>
 
@@ -511,6 +496,17 @@ The `uns` component contains more general information and fields with formatting
 | Type| `data.frame` |
 | Required | MUST |
 | Tags | Annotations |
+
+<br>
+
+#### quality_control_markers
+| Key | quality_control_markers |
+| :-- | :-- |
+| Annotator | Computed |
+| Value | Marker gene expression for patchseq analysis. |
+| Type| `data.frame` |
+| Required | RECOMMENDED |
+| Tags | Analysis |
 
 <br>
 
@@ -537,14 +533,30 @@ The `uns` component contains more general information and fields with formatting
 <br>
 
 #### cellannotation_schema
-| Key | cell_annotation_schema |
+| Key | cellannotation_schema |
 | :-- | :-- |
-| Annotator | Computed |
-| Value | A json storing the entire cell annotation schema (CAS) information. |
-| Type| `json` |
+| Annotator | Curator |
+| Value | A dictionary storing the entire cell annotation schema (CAS) information. |
+| Type| `dictionary` |
 | Required | RECOMMENDED |
 | Tags | Tooling |
 
 <br>
 
-* `cell_annotation_schema`: extended `calculated metadata` about annotations and labelsets stores in `uns` as in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) format under `labelsets`.  
+* `cellannotation_schema`: extended `calculated metadata` about annotations and labelsets stores in `uns` as in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) format under `labelsets`.  
+
+## `obsm` (Embeddings)
+
+The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
+
+#### X_[embedding]
+| Key | X_[embedding] |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
+| Type| `numpy.ndarray` |
+| Required | MUST |
+| Tags | Analysis |
+
+<br>
+
