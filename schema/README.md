@@ -308,21 +308,6 @@ Examples: `Neuronal`, `Inhibitory`, `LHX6 (MGE)`, `PVALB`, `Inh L5-6 PVALB LGR5`
 | Required | MUST |
 | Tags | Assigned metadata |
 
-## `obsm` (Embeddings)
-
-The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
-
-#### X_[embedding]
-| Key | X_[embedding] |
-| :-- | :-- |
-| Annotator | Curator/Computed |
-| Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
-| Type| `numpy.ndarray` |
-| Required | MUST |
-| Tags | Analysis |
-
-<br>
-
 ## `var`
 
 `var` is a [pandas.Dataframe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
@@ -559,3 +544,19 @@ The `uns` component contains more general information and fields with formatting
 <br>
 
 * `cellannotation_schema`: extended `calculated metadata` about annotations and labelsets stores in `uns` as in [CAS - BICAN extension](https://github.com/cellannotation/cell-annotation-schema/blob/main/build/BICAN_schema.md) format under `labelsets`.  
+
+## `obsm` (Embeddings)
+
+The `obsm` component contains all dimensionality reductions of the taxonomy (cell x dim). To display a dataset Curators MUST annotate one or more embeddings of at least two-dimensions (e.g. tSNE, UMAP, PCA, spatial coordinates) as numpy.ndarrays in obsm.
+
+#### X_[embedding]
+| Key | X_[embedding] |
+| :-- | :-- |
+| Annotator | Curator/Computed |
+| Value | An n-dimensional embedding (cell x dim) of the high dimensional expression data. |
+| Type| `numpy.ndarray` |
+| Required | MUST |
+| Tags | Analysis |
+
+<br>
+
